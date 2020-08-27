@@ -13,9 +13,9 @@ import {
 
 export const MobileNav: React.FC = ({ children }) => {
   const [sidebarOpened, setSidebarOpened] = useState(false)
-  const [fixed, setFixed] = useState(false)
+  //   const [fixed, setFixed] = useState(false)
   return (
-    <Media as={Sidebar.Pushable} at="mobile">
+    <Media at="mobile">
       <Sidebar.Pushable>
         <Sidebar
           as={Menu}
@@ -44,7 +44,7 @@ export const MobileNav: React.FC = ({ children }) => {
           <Segment
             inverted
             textAlign="center"
-            style={{ padding: '1em 0em' }}
+            style={{ minHeight: 350, padding: '1em 0em' }}
             vertical
           >
             <Container>

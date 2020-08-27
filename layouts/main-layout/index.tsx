@@ -6,11 +6,11 @@ import { Footer } from '../../components/Footer'
 export const MainLayout: React.FC = (props) => {
   return (
     <>
-      <Navbar />
+      <Navbar>
+        {props.children}
 
-      {props.children}
-
-      <Footer />
+        <Footer />
+      </Navbar>
     </>
   )
 }
