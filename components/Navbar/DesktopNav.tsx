@@ -1,8 +1,10 @@
 // import Link from 'next/link'
 import React from 'react'
-import { Media } from './index'
-
+import Link from 'next/link'
 import { Segment, Container, Menu, Button } from 'semantic-ui-react'
+
+import { Media } from './index'
+import { navigationItems } from './navigationItems'
 
 export const DesktopNav: React.FC = (props) => {
   return (
@@ -15,12 +17,13 @@ export const DesktopNav: React.FC = (props) => {
       >
         <Menu fixed="top">
           <Container>
-            <Menu.Item as="a" active>
-              Home
-            </Menu.Item>
-            <Menu.Item as="a">Work</Menu.Item>
-            <Menu.Item as="a">Company</Menu.Item>
-            <Menu.Item as="a">Careers</Menu.Item>
+            {navigationItems.map(({ name, address }) => {
+              return (
+                <Link key={name} href={address}>
+                  <Menu.Item as="a">{name}</Menu.Item>
+                </Link>
+              )
+            })}
             <Menu.Item position="right">
               <Button as="a" primary>
                 Contact me!

@@ -1,7 +1,9 @@
 import React, { useState } from 'react'
-import { Media } from './index'
-
+import Link from 'next/link'
 import { Sidebar, Menu, Button, Icon } from 'semantic-ui-react'
+
+import { Media } from './index'
+import { navigationItems } from './navigationItems'
 
 export const MobileNav: React.FC = ({ children }) => {
   const [sidebarOpened, setSidebarOpened] = useState(false)
@@ -16,14 +18,14 @@ export const MobileNav: React.FC = ({ children }) => {
           vertical
           visible={sidebarOpened}
         >
-          <Menu.Item as="a" active>
-            Home
-          </Menu.Item>
-          <Menu.Item as="a">Work</Menu.Item>
-          <Menu.Item as="a">Company</Menu.Item>
-          <Menu.Item as="a">Careers</Menu.Item>
-          <Menu.Item as="a">Log in</Menu.Item>
-          <Menu.Item as="a">Sign Up</Menu.Item>
+          {navigationItems.map((item) => {
+            const { name, address } = item
+            return (
+              <Link href={address} key={name}>
+                <Menu.Item as="a">{name}</Menu.Item>
+              </Link>
+            )
+          })}
         </Sidebar>
 
         <Sidebar.Pusher dimmed={sidebarOpened}>
