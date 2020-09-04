@@ -1,19 +1,10 @@
 import React, { useState } from 'react'
 import { Media } from './index'
 
-import {
-  Visibility,
-  Sidebar,
-  Segment,
-  Container,
-  Menu,
-  Button,
-  Icon,
-} from 'semantic-ui-react'
+import { Sidebar, Menu, Button, Icon } from 'semantic-ui-react'
 
 export const MobileNav: React.FC = ({ children }) => {
   const [sidebarOpened, setSidebarOpened] = useState(false)
-  //   const [fixed, setFixed] = useState(false)
   return (
     <Media at="mobile">
       <Sidebar.Pushable>
@@ -36,35 +27,16 @@ export const MobileNav: React.FC = ({ children }) => {
         </Sidebar>
 
         <Sidebar.Pusher dimmed={sidebarOpened}>
-          {/* <Visibility
-            once={false}
-            onBottomPassed={() => setFixed(true)}
-            onBottomPassedReverse={() => setFixed(false)}
-          > */}
-          <Segment
-            inverted
-            textAlign="center"
-            style={{ minHeight: 350, padding: '1em 0em' }}
-            vertical
-          >
-            <Container>
-              <Menu inverted pointing secondary>
-                <Menu.Item onClick={() => setSidebarOpened(!sidebarOpened)}>
-                  <Icon name="sidebar" />
-                </Menu.Item>
-                <Menu.Item position="right">
-                  <Button as="a" inverted>
-                    Log in
-                  </Button>
-                  <Button as="a" inverted style={{ marginLeft: '0.5em' }}>
-                    Sign Up
-                  </Button>
-                </Menu.Item>
-              </Menu>
-            </Container>
-          </Segment>
-          {/* </Visibility> */}
-
+          <Menu fixed="top">
+            <Menu.Item onClick={() => setSidebarOpened(!sidebarOpened)}>
+              <Icon name="sidebar" />
+            </Menu.Item>
+            <Menu.Item position="right">
+              <Button as="a" primary>
+                Contact me!
+              </Button>
+            </Menu.Item>
+          </Menu>
           {children}
         </Sidebar.Pusher>
       </Sidebar.Pushable>
