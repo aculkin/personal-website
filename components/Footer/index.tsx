@@ -9,44 +9,43 @@ export const Footer: React.FC = () => {
       <Container>
         <Grid divided inverted stackable>
           <Grid.Row>
-            <Grid.Column width={3}>
+            <Grid.Column width={4}>
               <Header inverted as="h4" content="About" />
               <List link inverted>
-                <List.Item as="a">
-                  <Link href="/new-page">
+                <List.Item>
+                  <Link href="/">
                     <a>Home</a>
                   </Link>
                 </List.Item>
-                <List.Item as="a">
-                  <Link href="/new-page">
+                <List.Item>
+                  <Link href="/education">
                     <a>Education</a>
                   </Link>
                 </List.Item>
-                <List.Item as="a">
-                  <Link href="/new-page">
+                <List.Item>
+                  <Link href="/employment">
                     <a>Employment</a>
                   </Link>
                 </List.Item>
-                <List.Item as="a">
-                  <Link href="/new-page">
+                <List.Item>
+                  <Link href="/projects">
                     <a>Projects</a>
                   </Link>
                 </List.Item>
               </List>
             </Grid.Column>
-            <Grid.Column width={3}>
-              <Header inverted as="h4" content="Services" />
+            <Grid.Column width={4}>
+              <Header inverted as="h4" content="Projects" />
               <List link inverted>
-                <List.Item as="a">Banana Pre-Order</List.Item>
-                <List.Item as="a">DNA FAQ</List.Item>
-                <List.Item as="a">How To Access</List.Item>
-                <List.Item as="a">Favorite X-Men</List.Item>
+                <List.Item as="a" href="https://www.roofrally.com">
+                  Roof Rally Marketing Site
+                </List.Item>
+                <List.Item as="a" href="https://app.roofrally.com">
+                  Roof Rally Web App
+                </List.Item>
               </List>
             </Grid.Column>
             <Grid.Column width={7}>
-              <Header as="h4" inverted>
-                Footer Header
-              </Header>
               <p>&copy; 2020 - All Rights Reserved</p>
             </Grid.Column>
           </Grid.Row>

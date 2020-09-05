@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import Link from 'next/link'
+import { useRouter } from 'next/router'
 import { Sidebar, Menu, Button, Icon } from 'semantic-ui-react'
 
 import { Media } from './index'
@@ -7,6 +8,7 @@ import { navigationItems } from './navigationItems'
 
 export const MobileNav: React.FC = ({ children }) => {
   const [sidebarOpened, setSidebarOpened] = useState(false)
+  const { pathname } = useRouter()
   return (
     <Media at="mobile">
       <Sidebar.Pushable>
@@ -18,11 +20,18 @@ export const MobileNav: React.FC = ({ children }) => {
           vertical
           visible={sidebarOpened}
         >
+          <Link href={'/'}>
+            <Menu.Item active={pathname === '/'} as="a">
+              Home
+            </Menu.Item>
+          </Link>
           {navigationItems.map((item) => {
             const { name, address } = item
             return (
               <Link href={address} key={name}>
-                <Menu.Item as="a">{name}</Menu.Item>
+                <Menu.Item active={pathname === address} as="a">
+                  {name}
+                </Menu.Item>
               </Link>
             )
           })}

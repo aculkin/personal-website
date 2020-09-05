@@ -8,7 +8,11 @@ export const Home: React.FC = () => {
     <MainLayout>
       <div className={styles.container}>
         <Head>
-          <title>Create Next App</title>
+          <title>Andrew Culkin | Home</title>
+          <meta
+            name="description"
+            content="Hi, I'm Andrew and this is my personal website!"
+          />
           <link rel="icon" href="/favicon.ico" />
         </Head>
 
