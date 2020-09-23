@@ -1,5 +1,8 @@
 import React, { useState } from 'react'
 import { Modal, Button } from 'semantic-ui-react'
+import emailjs, { init } from 'emailjs-com'
+
+init('user_ioSsmmV57jkAZjF1BYOa8')
 
 import { ContactMeForm } from '../../forms/ContactMeForm'
 
@@ -11,14 +14,35 @@ export const ContactMe: React.FC = (props) => {
     message: '',
   })
 
-  const handleChange = (e, { name, value }) => {
-    setContactMeFormData({ [name]: value })
+  const handleChange = (_e, { name, value }): void => {
+    console.log(name)
+    setContactMeFormData({ ...contactMeFormData, [name]: value })
   }
+
+  const sendEmail = (): void => {
+    try {
+      emailjs.send(
+        'service_597o3vb',
+        'template_51o9pga',
+        {
+          from_name: contactMeFormData.name,
+          message: contactMeFormData.message,
+          reply_to: contactMeFormData.email,
+        },
+        'user_ioSsmmV57jkAZjF1BYOa8'
+      )
+      console.log('sending email')
+      setModalOpen(false)
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
   return (
     <Modal
       closeIcon
       trigger={
-        <Button onClick={setModalOpen} as="a" primary>
+        <Button onClick={() => setModalOpen(true)} as="a" primary>
           Contact Me
         </Button>
       }
@@ -38,7 +62,7 @@ export const ContactMe: React.FC = (props) => {
         <Button negative onClick={() => setModalOpen(false)}>
           Nah, nevermind
         </Button>
-        <Button positive onClick={() => setModalOpen(false)}>
+        <Button positive onClick={sendEmail}>
           Agree
         </Button>
       </Modal.Actions>

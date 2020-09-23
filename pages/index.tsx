@@ -1,62 +1,85 @@
 import * as React from 'react'
 import Head from 'next/head'
-import styles from '../styles/Home.module.css'
+import Link from 'next/link'
 import { MainLayout } from '../layouts/main-layout'
+import {
+  Header,
+  Card,
+  Container,
+  Divider,
+  Image,
+  Grid,
+} from 'semantic-ui-react'
 
 export const Home: React.FC = () => {
   return (
     <MainLayout>
-      <div className={styles.container}>
-        <Head>
-          <title>Andrew Culkin | Home</title>
-          <meta
-            name="description"
-            content="Hi, I'm Andrew and this is my personal website!"
-          />
-          <link rel="icon" href="/favicon.ico" />
-        </Head>
+      <Head>
+        <title>Andrew Culkin | Home</title>
+        <meta
+          name="description"
+          content="Hi, I'm Andrew and this is my personal website!"
+        />
+        <link rel="icon" href="/favicon.ico" />
+        <script
+          type="text/javascript"
+          src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"
+        />
+      </Head>
+      <Grid columns="4" stackable>
+        <Grid.Column width="1" />
+        <Grid.Column width="8">
+          <Divider hidden />
+          <Container>
+            <Header textAlign="center" as="h1">
+              Hi, I&apos;m Andrew Culkin,
+              <Header.Subheader>
+                an engineer with a passion for web development and startups
+              </Header.Subheader>
+            </Header>
+            <Divider hidden />
+            <Divider hidden />
+            <Divider hidden />
 
-        <main className={styles.main}>
-          <h1 className={styles.title}>
-            Welcome to <a href="https://nextjs.org">Next.js!</a>
-          </h1>
-
-          <p className={styles.description}>
-            Get started by editing{' '}
-            <code className={styles.code}>pages/index.js</code>
-          </p>
-
-          <div className={styles.grid}>
-            <a href="https://nextjs.org/docs" className={styles.card}>
-              <h3>Documentation &rarr;</h3>
-              <p>Find in-depth information about Next.js features and API.</p>
-            </a>
-
-            <a href="https://nextjs.org/learn" className={styles.card}>
-              <h3>Learn &rarr;</h3>
-              <p>Learn about Next.js in an interactive course with quizzes!</p>
-            </a>
-
-            <a
-              href="https://github.com/vercel/next.js/tree/master/examples"
-              className={styles.card}
-            >
-              <h3>Examples &rarr;</h3>
-              <p>Discover and deploy boilerplate example Next.js projects.</p>
-            </a>
-
-            <a
-              href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-              className={styles.card}
-            >
-              <h3>Deploy &rarr;</h3>
-              <p>
-                Instantly deploy your Next.js site to a public URL with Vercel.
-              </p>
-            </a>
-          </div>
-        </main>
-      </div>
+            <Card.Group centered>
+              <Link href="/employment">
+                <Card>
+                  <Card.Content>
+                    <Card.Header>Employment</Card.Header>
+                    <Card.Description>
+                      Where I&apos;ve worked in the past
+                    </Card.Description>
+                  </Card.Content>
+                </Card>
+              </Link>
+              <Link href="/education">
+                <Card>
+                  <Card.Content>
+                    <Card.Header>Education</Card.Header>
+                    <Card.Description>
+                      Schools and educational programs I&apos;ve completed
+                    </Card.Description>
+                  </Card.Content>
+                </Card>
+              </Link>
+              <Link href="/skills">
+                <Card>
+                  <Card.Content>
+                    <Card.Header>Skills</Card.Header>
+                    <Card.Description>
+                      All the tools and technologies I&apos;ve worked with
+                    </Card.Description>
+                  </Card.Content>
+                </Card>
+              </Link>
+            </Card.Group>
+          </Container>
+        </Grid.Column>
+        <Grid.Column width="1" />
+        <Grid.Column width="6">
+          <Image fluid src="/andrew-culkin-headshot.JPG" />
+        </Grid.Column>
+      </Grid>
     </MainLayout>
   )
 }

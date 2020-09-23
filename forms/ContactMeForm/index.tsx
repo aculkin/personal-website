@@ -33,8 +33,10 @@ export const ContactMeForm: React.FC<ContactMe> = ({
       <Form.TextArea
         name="message"
         onChange={handleChange}
+        id="message"
+        label="Message"
         value={message}
-        placeholder="Message..."
+        placeholder="Please type your message here..."
       />
     </Form>
   )

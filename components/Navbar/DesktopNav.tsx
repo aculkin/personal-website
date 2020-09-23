@@ -27,7 +27,7 @@ export const DesktopNav: React.FC = (props) => {
             {navigationItems.map(({ name, address }) => {
               return (
                 <Link key={name} href={address}>
-                  <Menu.Item active={pathname === address} as="a">
+                  <Menu.Item active={pathname.includes(address)} as="a">
                     {name}
                   </Menu.Item>
                 </Link>

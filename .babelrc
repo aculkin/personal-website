@@ -1,8 +1,14 @@
 {
   "presets": [
-    "next/babel",
-    "@babel/react",
-    "@babel/env",
-    "@babel/preset-typescript"
-  ]
+    [
+      "next/babel",
+      {
+        "@babel/plugin-transform-runtime": {},
+        "@babel/react": {},
+        "@babel/env": {},
+        "@babel/preset-typescript": {}
+      }
+    ]
+  ],
+  "plugins": []
 }

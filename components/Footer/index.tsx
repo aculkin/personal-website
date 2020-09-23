@@ -1,7 +1,16 @@
 import Link from 'next/link'
 import * as React from 'react'
 
-import { Segment, Container, Grid, List, Header } from 'semantic-ui-react'
+import {
+  Segment,
+  Container,
+  Grid,
+  List,
+  Header,
+  Button,
+  Divider,
+  Icon,
+} from 'semantic-ui-react'
 
 export const Footer: React.FC = () => {
   return (
@@ -46,7 +55,40 @@ export const Footer: React.FC = () => {
               </List>
             </Grid.Column>
             <Grid.Column width={7}>
-              <p>&copy; 2020 - All Rights Reserved</p>
+              <Button
+                href="https://www.facebook.com/andrew.culkin"
+                target="_blank"
+                circular
+                color="facebook"
+                icon="facebook"
+              />
+              <Button
+                href="https://twitter.com/AndrewSCulkin"
+                target="_blank"
+                circular
+                color="twitter"
+                icon="twitter"
+              />
+              <Button
+                href="https://www.linkedin.com/in/andrew-culkin/"
+                target="_blank"
+                circular
+                color="linkedin"
+                icon="linkedin"
+              />
+              <Button
+                href="https://www.instagram.com/aculkin/"
+                target="_blank"
+                circular
+                color="instagram"
+                icon="instagram"
+              />
+              <Button href="/vercel.svg" floated="right" download>
+                <Icon name="download" />
+                Resume
+              </Button>
+              <Divider />
+              <p>&copy; 2020 - Andrew Culkin</p>
             </Grid.Column>
           </Grid.Row>
         </Grid>
