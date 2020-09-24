@@ -21,9 +21,18 @@ export const Home: React.FC = () => {
           content="Hi, I'm Andrew and this is my personal website!"
         />
         <link rel="icon" href="/favicon.ico" />
+        <link
+          rel="stylesheet"
+          type="text/css"
+          href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"
+        />
         <script
           type="text/javascript"
           src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"
+        />
+        <script
+          type="text/javascript"
+          src="https://cdn.jsdelivr.net/npm/toastify-js"
         />
       </Head>
       <Grid columns="4" stackable>

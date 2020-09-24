@@ -1,19 +1,19 @@
 import Toastify from 'toastify-js'
 
 export const toast = (text: string, type?: string): void => {
-  let backgroundColor
+  let backgroundColor: string
   switch (type) {
     case 'positive':
-      backgroundColor = 'linear-gradient(to right, #00b09b, #96c93d)'
+      backgroundColor = '#2bb827'
       break
     case 'negative':
-      backgroundColor = 'linear-gradient(to right, #94001b, #d40228)'
+      backgroundColor = '#d9001d'
       break
     case 'info':
-      backgroundColor = 'linear-gradient(to right, #004e91, #117ad6)'
+      backgroundColor = '#117ad6'
       break
     default:
-      backgroundColor = 'linear-gradient(to right, #5e5e5e, #8a8a8a)'
+      backgroundColor = '#8a8a8a'
   }
   Toastify({
     text,
@@ -24,7 +24,6 @@ export const toast = (text: string, type?: string): void => {
     gravity: 'top',
     position: 'right',
   }).showToast()
-  return
 }
 
 export default toast
