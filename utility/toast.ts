@@ -1,4 +1,4 @@
-import Toastify from 'toastify'
+import Toastify from 'toastify-js'
 
 export const toast = (text: string, type?: string): void => {
   let backgroundColor
