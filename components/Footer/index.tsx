@@ -36,15 +36,15 @@ export const Footer: React.FC = () => {
                     <a>Employment</a>
                   </Link>
                 </List.Item>
-                <List.Item>
+                {/* <List.Item>
                   <Link href="/projects">
                     <a>Projects</a>
                   </Link>
-                </List.Item>
+                </List.Item> */}
               </List>
             </Grid.Column>
             <Grid.Column width={4}>
-              <Header inverted as="h4" content="Projects" />
+              {/* <Header inverted as="h4" content="Projects" />
               <List link inverted>
                 <List.Item as="a" href="https://www.roofrally.com">
                   Roof Rally Marketing Site
@@ -52,7 +52,7 @@ export const Footer: React.FC = () => {
                 <List.Item as="a" href="https://app.roofrally.com">
                   Roof Rally Web App
                 </List.Item>
-              </List>
+              </List> */}
             </Grid.Column>
             <Grid.Column width={7}>
               <Button

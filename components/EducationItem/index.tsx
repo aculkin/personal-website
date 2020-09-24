@@ -1,5 +1,5 @@
 import React from 'react'
-import Link from 'next/link'
+// import Link from 'next/link'
 import { Item, Label, Icon, Button } from 'semantic-ui-react'
 
 interface EducationInfo {
@@ -9,7 +9,7 @@ interface EducationInfo {
   startDate: string
   endDate: string
   description: string
-  linkUrl: string
+  //   linkUrl: string
   degree?: string
   minor?: string
 }
@@ -20,7 +20,7 @@ export const EducationItem: React.FC<EducationInfo> = ({
   startDate,
   endDate,
   description,
-  linkUrl,
+  //   linkUrl,
   schoolWebsiteUrl,
   degree,
   minor,
@@ -51,9 +51,9 @@ export const EducationItem: React.FC<EducationInfo> = ({
           )}
         </Item.Description>
         <Item.Extra>
-          <Link href={linkUrl}>
+          {/* <Link href={linkUrl}>
             <Button primary>Learn More</Button>
-          </Link>
+          </Link> */}
           <Button
             basic
             target="_blank"

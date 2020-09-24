@@ -1,5 +1,5 @@
 import React from 'react'
-import Link from 'next/link'
+// import Link from 'next/link'
 import { Item, Button } from 'semantic-ui-react'
 
 interface EmploymentInfo {
@@ -8,7 +8,7 @@ interface EmploymentInfo {
   startDate: string
   endDate: string
   description: string
-  linkUrl: string
+  // linkUrl: string
   companyWebsiteLink: string
 }
 
@@ -18,7 +18,7 @@ export const EmploymentItem: React.FC<EmploymentInfo> = ({
   startDate,
   endDate,
   description,
-  linkUrl,
+  // linkUrl,
   companyWebsiteLink,
 }) => {
   return (
@@ -33,9 +33,9 @@ export const EmploymentItem: React.FC<EmploymentInfo> = ({
         </Item.Meta>
         <Item.Description>{description}</Item.Description>
         <Item.Extra>
-          <Link href={linkUrl}>
+          {/* <Link href={linkUrl}>
             <Button primary>Learn More</Button>
-          </Link>
+          </Link> */}
           <Button
             basic
             target="_blank"

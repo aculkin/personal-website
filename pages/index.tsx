@@ -62,7 +62,7 @@ export const Home: React.FC = () => {
                   </Card.Content>
                 </Card>
               </Link>
-              <Link href="/skills">
+              {/* <Link href="/skills">
                 <Card>
                   <Card.Content>
                     <Card.Header>Skills</Card.Header>
@@ -71,7 +71,7 @@ export const Home: React.FC = () => {
                     </Card.Description>
                   </Card.Content>
                 </Card>
-              </Link>
+              </Link> */}
             </Card.Group>
           </Container>
         </Grid.Column>
@@ -80,6 +80,7 @@ export const Home: React.FC = () => {
           <Image fluid src="/andrew-culkin-headshot.JPG" />
         </Grid.Column>
       </Grid>
+      <Divider hidden />
     </MainLayout>
   )
 }
