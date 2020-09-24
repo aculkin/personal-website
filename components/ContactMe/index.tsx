@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Modal, Button, Container, Divider } from 'semantic-ui-react'
-// import emailjs, { init } from 'emailjs-com'
-// init('user_ioSsmmV57jkAZjF1BYOa8')
+import emailjs, { init } from 'emailjs-com'
+init('user_ioSsmmV57jkAZjF1BYOa8')
 
 import { toast } from '../../utility/toast'
 import { ContactMeForm } from '../../forms/ContactMeForm'
@@ -27,18 +27,18 @@ export const ContactMe: React.FC = (props) => {
 
   const sendEmail = async (): Promise<void> => {
     try {
-      // await emailjs.send(
-      //   'service_597o3vb',
-      //   'template_51o9pga',
-      //   {
-      //     from_name: contactMeFormData.name,
-      //     message: contactMeFormData.message,
-      //     reply_to: contactMeFormData.email,
-      //   },
-      //   'user_ioSsmmV57jkAZjF1BYOa8'
-      // )
+      await emailjs.send(
+        'service_597o3vb',
+        'template_51o9pga',
+        {
+          from_name: contactMeFormData.name,
+          message: contactMeFormData.message,
+          reply_to: contactMeFormData.email,
+        },
+        'user_ioSsmmV57jkAZjF1BYOa8'
+      )
       setModalOpen(false)
-      toast('Your message was sent succssfully')
+      toast('Your message was sent succssfully', 'positive')
     } catch (error) {
       console.log(error)
     }
