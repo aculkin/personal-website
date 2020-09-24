@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
 import { Modal, Button, Container, Divider } from 'semantic-ui-react'
 import emailjs, { init } from 'emailjs-com'
-
 init('user_ioSsmmV57jkAZjF1BYOa8')
 
+import { toast } from '../../utility/toast'
 import { ContactMeForm } from '../../forms/ContactMeForm'
 
 export const ContactMe: React.FC = (props) => {
@@ -14,23 +14,34 @@ export const ContactMe: React.FC = (props) => {
     message: '',
   })
 
-  const handleChange = (_e, { name, value }): void => {
-    setContactMeFormData({ ...contactMeFormData, [name]: value })
-  }
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>): void =>
+    setContactMeFormData({
+      ...contactMeFormData,
+      [event.target.name]: event.target.value,
+    })
 
-  const sendEmail = (): void => {
+  const handleTextAreaChange = (
+    event: React.ChangeEvent<HTMLTextAreaElement>
+  ): void =>
+    setContactMeFormData({ ...contactMeFormData, message: event.target.value })
+
+  const sendEmail = async (): Promise<void> => {
     try {
-      emailjs.send(
-        'service_597o3vb',
-        'template_51o9pga',
-        {
-          from_name: contactMeFormData.name,
-          message: contactMeFormData.message,
-          reply_to: contactMeFormData.email,
-        },
-        'user_ioSsmmV57jkAZjF1BYOa8'
-      )
-      setModalOpen(false)
+      emailjs
+        .send(
+          'service_597o3vb',
+          'template_51o9pga',
+          {
+            from_name: contactMeFormData.name,
+            message: contactMeFormData.message,
+            reply_to: contactMeFormData.email,
+          },
+          'user_ioSsmmV57jkAZjF1BYOa8'
+        )
+        .then(() => {
+          setModalOpen(false)
+          toast('Your message was sent succssfully')
+        })
     } catch (error) {
       console.log(error)
     }
@@ -62,6 +73,7 @@ export const ContactMe: React.FC = (props) => {
         <ContactMeForm
           contactMeFormData={contactMeFormData}
           handleChange={handleChange}
+          handleTextAreaChange={handleTextAreaChange}
         />
         <div>{props.children}</div>
       </Modal.Content>

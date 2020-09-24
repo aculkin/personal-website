@@ -3,12 +3,14 @@ import { Form } from 'semantic-ui-react'
 
 interface ContactMe {
   contactMeFormData: { name: string; email: string; message: string }
-  handleChange: (value: string, event: { name: string; value: string }) => void
+  handleChange: (event: React.ChangeEvent<HTMLInputElement>) => void
+  handleTextAreaChange: (event: React.ChangeEvent<HTMLTextAreaElement>) => void
 }
 
 export const ContactMeForm: React.FC<ContactMe> = ({
   contactMeFormData: { name, email, message },
   handleChange,
+  handleTextAreaChange,
 }) => {
   return (
     <Form>
@@ -16,7 +18,6 @@ export const ContactMeForm: React.FC<ContactMe> = ({
         <Form.Input
           onChange={handleChange}
           name="name"
-          id="name"
           value={name}
           label="Name"
           placeholder="Name..."
@@ -24,7 +25,6 @@ export const ContactMeForm: React.FC<ContactMe> = ({
         <Form.Input
           name="email"
           onChange={handleChange}
-          id="email"
           value={email}
           label="Email"
           placeholder="Email..."
@@ -32,11 +32,10 @@ export const ContactMeForm: React.FC<ContactMe> = ({
       </Form.Group>
       <Form.TextArea
         name="message"
-        onChange={handleChange}
-        id="message"
+        onChange={handleTextAreaChange}
         label="Message"
         value={message}
-        placeholder="Please type your message here..."
+        placeholder="Type your message here..."
       />
     </Form>
   )
