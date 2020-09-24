@@ -83,7 +83,7 @@ export const Footer: React.FC = () => {
                 color="instagram"
                 icon="instagram"
               />
-              <Button href="/vercel.svg" floated="right" download>
+              <Button href="/Andrew_Culkin_Resume.pdf" floated="right" download>
                 <Icon name="download" />
                 Resume
               </Button>

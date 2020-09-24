@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Modal, Button } from 'semantic-ui-react'
+import { Modal, Button, Container, Divider } from 'semantic-ui-react'
 import emailjs, { init } from 'emailjs-com'
 
 init('user_ioSsmmV57jkAZjF1BYOa8')
@@ -15,7 +15,6 @@ export const ContactMe: React.FC = (props) => {
   })
 
   const handleChange = (_e, { name, value }): void => {
-    console.log(name)
     setContactMeFormData({ ...contactMeFormData, [name]: value })
   }
 
@@ -31,7 +30,6 @@ export const ContactMe: React.FC = (props) => {
         },
         'user_ioSsmmV57jkAZjF1BYOa8'
       )
-      console.log('sending email')
       setModalOpen(false)
     } catch (error) {
       console.log(error)
@@ -51,7 +49,16 @@ export const ContactMe: React.FC = (props) => {
       onClose={() => setModalOpen(false)}
     >
       <Modal.Header>Contact Me!</Modal.Header>
+
       <Modal.Content>
+        <Container>
+          <p>
+            If you would like to get in touch with me, you can use the form
+            below, or I can be reached by email at{' '}
+            <a href="mailto:andrewsculkin@gmail.com">andrewsculkin@gmail.com</a>
+          </p>
+        </Container>
+        <Divider hidden />
         <ContactMeForm
           contactMeFormData={contactMeFormData}
           handleChange={handleChange}
@@ -59,11 +66,11 @@ export const ContactMe: React.FC = (props) => {
         <div>{props.children}</div>
       </Modal.Content>
       <Modal.Actions>
-        <Button negative onClick={() => setModalOpen(false)}>
-          Nah, nevermind
+        <Button floated="left" secondary onClick={() => setModalOpen(false)}>
+          Nevermind
         </Button>
-        <Button positive onClick={sendEmail}>
-          Agree
+        <Button primary onClick={sendEmail}>
+          Send Message
         </Button>
       </Modal.Actions>
     </Modal>
