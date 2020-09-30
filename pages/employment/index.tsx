@@ -33,7 +33,7 @@ export const Employment: React.FC = () => {
           />
           <EmploymentItem
             companyName="Ernst & Young"
-            imageUrl="/ey.png"
+            imageUrl="/ey_logo.jpg"
             startDate="August 2017"
             endDate="June 2019"
             description="I worked as a Technology Risk consultant for EY for about 2 years. This position involved working closely with senior management in the risk functions of several Fortune 500 companies. One project I worked on involved developing the IT Risk program from scratch for a recently spun off life insurance company. We worked with different business functions to ensure that they had the proper IT controls in place to adequately address their risk. If they didn’t have the appropriate controls we would propose new controls to be implemented."
