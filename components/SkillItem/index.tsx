@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import Link from 'next/link'
 import { Card, Image, Icon, Modal, Header, Button } from 'semantic-ui-react'
 
 interface SkillInfo {
@@ -35,7 +34,7 @@ export const SkillItem: React.FC<SkillInfo> = ({
       >
         <Header content={name} />
         <Modal.Content image>
-          <Image size="medium" src={imgLink} wrapped bordered />
+          <Image size="small" src={imgLink} wrapped bordered />
           <Modal.Description>
             <Header>{name}</Header>
             <p>{description}</p>
@@ -43,12 +42,10 @@ export const SkillItem: React.FC<SkillInfo> = ({
         </Modal.Content>
         <Modal.Actions>
           {link && (
-            <Link href={link}>
-              <Button>
-                <Icon name="external" />
-                {name} Website
-              </Button>
-            </Link>
+            <Button href={link} target="_blank">
+              <Icon name="external" />
+              {name} Website
+            </Button>
           )}
           <Button color="red" onClick={() => setModalOpen(false)}>
             Close
