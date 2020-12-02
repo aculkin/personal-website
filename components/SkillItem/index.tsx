@@ -2,21 +2,18 @@ import React, { useState } from 'react'
 import { Card, Image, Icon, Modal, Header, Button } from 'semantic-ui-react'
 
 interface SkillInfo {
-  name: string
-  shortDescription: string
-  description: string
-  link: string
-  imgLink: string
+  skill: {
+    name: string
+    shortDescription: string
+    description: string
+    link: string
+    imgLink: string
+  }
 }
 
-export const SkillItem: React.FC<SkillInfo> = ({
-  name,
-  shortDescription,
-  description,
-  link,
-  imgLink,
-}) => {
+export const SkillItem: React.FC<SkillInfo> = ({ skill }) => {
   const [modalOpen, setModalOpen] = useState(false)
+  const { name, shortDescription, description, link, imgLink } = skill
   return (
     <>
       <Card as="a" onClick={() => setModalOpen(true)}>
@@ -34,7 +31,7 @@ export const SkillItem: React.FC<SkillInfo> = ({
       >
         <Header content={name} />
         <Modal.Content image>
-          <Image size="small" src={imgLink} wrapped bordered />
+          <Image size="large" src={imgLink} wrapped bordered />
           <Modal.Description>
             <Header>{name}</Header>
             <p>{description}</p>
