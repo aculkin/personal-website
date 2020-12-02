@@ -18,7 +18,7 @@ export const Footer: React.FC = () => {
       <Container>
         <Grid divided inverted stackable>
           <Grid.Row>
-            <Grid.Column width={4}>
+            <Grid.Column width={6}>
               <Header inverted as="h4" content="About" />
               <List link inverted>
                 <List.Item>
@@ -36,25 +36,14 @@ export const Footer: React.FC = () => {
                     <a>Employment</a>
                   </Link>
                 </List.Item>
-                {/* <List.Item>
-                  <Link href="/projects">
-                    <a>Projects</a>
+                <List.Item>
+                  <Link href="/skills">
+                    <a>Skills</a>
                   </Link>
-                </List.Item> */}
+                </List.Item>
               </List>
             </Grid.Column>
-            <Grid.Column width={4}>
-              {/* <Header inverted as="h4" content="Projects" />
-              <List link inverted>
-                <List.Item as="a" href="https://www.roofrally.com">
-                  Roof Rally Marketing Site
-                </List.Item>
-                <List.Item as="a" href="https://app.roofrally.com">
-                  Roof Rally Web App
-                </List.Item>
-              </List> */}
-            </Grid.Column>
-            <Grid.Column width={7}>
+            <Grid.Column width={10}>
               <Button
                 href="https://www.facebook.com/andrew.culkin"
                 target="_blank"
