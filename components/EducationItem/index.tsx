@@ -3,34 +3,35 @@ import React from 'react'
 import { Item, Label, Icon, Button } from 'semantic-ui-react'
 
 interface EducationInfo {
-  schoolName: string
-  imageUrl: string
-  schoolWebsiteUrl: string
-  startDate: string
-  endDate: string
-  description: string
-  //   linkUrl: string
-  degree?: string
-  minor?: string
+  school: {
+    schoolName: string
+    imageUrl: string
+    schoolWebsiteUrl: string
+    startDate: string
+    endDate: string
+    description: string
+    degree?: string
+    minor?: string
+  }
 }
 
-export const EducationItem: React.FC<EducationInfo> = ({
-  schoolName,
-  imageUrl,
-  startDate,
-  endDate,
-  description,
-  //   linkUrl,
-  schoolWebsiteUrl,
-  degree,
-  minor,
-}) => {
+export const EducationItem: React.FC<EducationInfo> = ({ school }) => {
+  const {
+    schoolName,
+    imageUrl,
+    startDate,
+    endDate,
+    description,
+    schoolWebsiteUrl,
+    degree,
+    minor,
+  } = school
   return (
     <Item>
       <Item.Image src={imageUrl} />
 
       <Item.Content>
-        <Item.Header as="a">{schoolName}</Item.Header>
+        <Item.Header>{schoolName}</Item.Header>
         <Item.Meta>
           <span className="cinema">
             {startDate} - {endDate}
@@ -51,9 +52,6 @@ export const EducationItem: React.FC<EducationInfo> = ({
           )}
         </Item.Description>
         <Item.Extra>
-          {/* <Link href={linkUrl}>
-            <Button primary>Learn More</Button>
-          </Link> */}
           <Button
             basic
             target="_blank"
