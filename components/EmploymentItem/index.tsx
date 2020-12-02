@@ -3,24 +3,25 @@ import React from 'react'
 import { Item, Button } from 'semantic-ui-react'
 
 interface EmploymentInfo {
-  companyName: string
-  imageUrl: string
-  startDate: string
-  endDate: string
-  description: string
-  // linkUrl: string
-  companyWebsiteLink: string
+  company: {
+    companyName: string
+    imageUrl: string
+    startDate: string
+    endDate: string
+    description: string
+    companyWebsiteLink: string
+  }
 }
 
-export const EmploymentItem: React.FC<EmploymentInfo> = ({
-  companyName,
-  imageUrl,
-  startDate,
-  endDate,
-  description,
-  // linkUrl,
-  companyWebsiteLink,
-}) => {
+export const EmploymentItem: React.FC<EmploymentInfo> = ({ company }) => {
+  const {
+    companyName,
+    imageUrl,
+    startDate,
+    endDate,
+    description,
+    companyWebsiteLink,
+  } = company
   return (
     <Item>
       <Item.Image src={imageUrl} />
@@ -33,9 +34,6 @@ export const EmploymentItem: React.FC<EmploymentInfo> = ({
         </Item.Meta>
         <Item.Description>{description}</Item.Description>
         <Item.Extra>
-          {/* <Link href={linkUrl}>
-            <Button primary>Learn More</Button>
-          </Link> */}
           <Button
             basic
             target="_blank"
