@@ -6,7 +6,7 @@ import { Footer } from '../../components/Footer'
 export const MainLayout: React.FC = (props) => {
   return (
     <Navbar>
-      <div style={{ paddingTop: '22px' }}>{props.children}</div>
+      <div>{props.children}</div>
       <Footer />
     </Navbar>
   )
