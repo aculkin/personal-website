@@ -11,34 +11,27 @@ export const DesktopNav: React.FC = (props) => {
   const { pathname } = useRouter()
   return (
     <Media greaterThan="mobile">
-      <Segment
-        inverted
-        textAlign="center"
-        style={{ padding: '1em 0em' }}
-        vertical
-      >
-        <Menu fixed="top">
-          <Container>
-            <Link href={'/'}>
-              <Menu.Item active={pathname === '/'} as="a">
-                Home
-              </Menu.Item>
-            </Link>
-            {navigationItems.map(({ name, address }) => {
-              return (
-                <Link key={name} href={address}>
-                  <Menu.Item active={pathname.includes(address)} as="a">
-                    {name}
-                  </Menu.Item>
-                </Link>
-              )
-            })}
-            <Menu.Item position="right">
-              <ContactMe />
+      <Menu fixed="top" inverted size="large">
+        <Container>
+          <Link href={'/'}>
+            <Menu.Item active={pathname === '/'} as="a">
+              Home
             </Menu.Item>
-          </Container>
-        </Menu>
-      </Segment>
+          </Link>
+          {navigationItems.map(({ name, address }) => {
+            return (
+              <Link key={name} href={address}>
+                <Menu.Item active={pathname.includes(address)} as="a">
+                  {name}
+                </Menu.Item>
+              </Link>
+            )
+          })}
+          <Menu.Item position="right">
+            <ContactMe />
+          </Menu.Item>
+        </Container>
+      </Menu>
       {props.children}
     </Media>
   )

@@ -1,8 +1,8 @@
 export const navigationItems = [
-  { name: 'Education', address: '/education' },
+  { name: 'Projects', address: '/projects' },
   { name: 'Employment', address: '/employment' },
-  // { name: 'Projects', address: '/projects' },
   { name: 'Skills', address: '/skills' },
+  { name: 'Education', address: '/education' },
 ]
 
 export default navigationItems
