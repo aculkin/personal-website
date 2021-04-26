@@ -9,25 +9,40 @@ import { employment } from '../../utility/employment'
 export const Employment: React.FC = () => {
   return (
     <MainLayout>
-      <Head>
-        <title>Andrew Culkin | Employment</title>
-        <meta
-          name="description"
-          content="My employment history can be found here"
-        />
-      </Head>
-      <Divider hidden />
-      <Header textAlign="center" as="h1">
-        Employment History
-      </Header>
-      <Container>
-        <Item.Group divided>
+      <div
+        style={{
+          backgroundImage: 'url(/employment-background.jpg)',
+          backgroundSize: 'cover',
+          backgroundAttachment: 'fixed',
+          paddingBottom: '50px',
+        }}
+      >
+        <Head>
+          <title>Andrew Culkin | Employment</title>
+          <meta
+            name="description"
+            content="My employment history can be found here"
+          />
+        </Head>
+        <Header
+          style={{
+            paddingTop: '2em',
+            fontSize: '3em',
+            fontWeight: 'bold',
+            color: 'white',
+            textShadow: '2px 2px 8px #000000',
+          }}
+          textAlign="center"
+          as="h1"
+        >
+          Employment
+        </Header>
+        <Container>
           {employment.map((company) => (
             <EmploymentItem key={company.companyName} company={company} />
           ))}
-        </Item.Group>
-      </Container>
-      <Divider hidden />
+        </Container>
+      </div>
     </MainLayout>
   )
 }

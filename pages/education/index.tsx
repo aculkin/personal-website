@@ -16,18 +16,34 @@ export const Education: React.FC = () => {
           content="From Lehigh Univresity to Fullstack Academy I've been to a few schools, read about them here!"
         />
       </Head>
-      <Divider hidden />
-      <Header textAlign="center" as="h1">
-        Education
-      </Header>
-      <Container>
-        <Item.Group divided>
+      <div
+        style={{
+          backgroundImage: 'url(/education-background.jpg)',
+          backgroundSize: 'cover',
+          backgroundAttachment: 'fixed',
+          paddingBottom: '50px',
+        }}
+      >
+        <Header
+          style={{
+            paddingTop: '2em',
+            fontSize: '3em',
+            fontWeight: 'bold',
+            color: 'white',
+            textShadow: '2px 2px 8px #000000',
+          }}
+          textAlign="center"
+          as="h1"
+        >
+          Education
+        </Header>
+        <Container>
           {education.map((school) => (
             <EducationItem key={school.schoolName} school={school} />
           ))}
-        </Item.Group>
-        <Divider hidden />
-      </Container>
+          <Divider hidden />
+        </Container>
+      </div>
     </MainLayout>
   )
 }

@@ -1,15 +1,11 @@
 import * as React from 'react'
 import Head from 'next/head'
 import Link from 'next/link'
+import { Header, Card, Container, Divider, Grid } from 'semantic-ui-react'
+
 import { MainLayout } from '../layouts/main-layout'
-import {
-  Header,
-  Card,
-  Container,
-  Divider,
-  Image,
-  Grid,
-} from 'semantic-ui-react'
+import { HomePageCard } from '../components/HomePageCard'
+import { pages } from '../utility'
 
 export const Home: React.FC = () => {
   return (
@@ -35,61 +31,69 @@ export const Home: React.FC = () => {
           src="https://cdn.jsdelivr.net/npm/toastify-js"
         />
       </Head>
-      <Grid columns="4" stackable>
-        <Grid.Column width="1" />
-        <Grid.Column width="8">
-          <Divider hidden />
-          <Container>
-            <Header textAlign="center" as="h1">
-              Hi, I&apos;m Andrew Culkin,
-              <Header.Subheader>
-                an engineer with a passion for web development and startups
-              </Header.Subheader>
-            </Header>
-            <Divider hidden />
-            <Divider hidden />
-            <Divider hidden />
-
-            <Card.Group centered>
-              <Link href="/employment">
-                <Card>
-                  <Card.Content>
-                    <Card.Header>Employment</Card.Header>
-                    <Card.Description>
-                      Where I&apos;ve worked in the past
-                    </Card.Description>
-                  </Card.Content>
-                </Card>
-              </Link>
-              <Link href="/education">
-                <Card>
-                  <Card.Content>
-                    <Card.Header>Education</Card.Header>
-                    <Card.Description>
-                      Schools and educational programs I&apos;ve completed
-                    </Card.Description>
-                  </Card.Content>
-                </Card>
-              </Link>
-              {/* <Link href="/skills">
-                <Card>
-                  <Card.Content>
-                    <Card.Header>Skills</Card.Header>
-                    <Card.Description>
-                      All the tools and technologies I&apos;ve worked with
-                    </Card.Description>
-                  </Card.Content>
-                </Card>
-              </Link> */}
-            </Card.Group>
-          </Container>
-        </Grid.Column>
-        <Grid.Column width="1" />
-        <Grid.Column width="6">
-          <Image fluid src="/andrew-culkin-headshot.JPG" />
-        </Grid.Column>
-      </Grid>
-      <Divider hidden />
+      <div
+        style={{
+          backgroundImage: 'url(/background-image.jpg)',
+          backgroundSize: 'cover',
+          minHeight: '100vh',
+          backgroundAttachment: 'fixed',
+          paddingBottom: '3em',
+        }}
+      >
+        <Container>
+          <Grid>
+            <Grid.Row>
+              <Grid.Column>
+                <Header
+                  textAlign="center"
+                  as="h1"
+                  style={{
+                    marginTop: '2em',
+                    fontSize: '5em',
+                    fontWeight: 'bold',
+                    color: 'white',
+                    textShadow: '2px 2px 8px #000000',
+                  }}
+                >
+                  Andrew Culkin
+                  <Header.Subheader
+                    style={{
+                      marginTop: '1em',
+                      fontSize: '.3em',
+                      fontWeight: 'bold',
+                      color: 'white',
+                      textShadow: '2px 2px 8px #000000',
+                    }}
+                  >
+                    Entrepanuer, Web Developer, and Software Engineer
+                  </Header.Subheader>
+                  <Header.Subheader
+                    style={{
+                      marginBottom: '3em',
+                      fontSize: '.3em',
+                      fontWeight: 'bold',
+                      color: 'white',
+                      textShadow: '2px 2px 8px #000000',
+                    }}
+                  >
+                    with a passion for startups and clean energy
+                  </Header.Subheader>
+                </Header>
+              </Grid.Column>
+            </Grid.Row>
+            <Divider />
+            <Grid.Row>
+              <Grid.Column>
+                <Card.Group centered>
+                  {pages.map((page) => {
+                    return <HomePageCard key={page.name} page={page} />
+                  })}
+                </Card.Group>
+              </Grid.Column>
+            </Grid.Row>
+          </Grid>
+        </Container>
+      </div>
     </MainLayout>
   )
 }
