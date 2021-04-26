@@ -1,6 +1,15 @@
 import React from 'react'
-// import Link from 'next/link'
-import { Item, Label, Icon, Button } from 'semantic-ui-react'
+import {
+  Item,
+  Label,
+  Icon,
+  Button,
+  Segment,
+  Header,
+  Image,
+  Divider,
+  Grid,
+} from 'semantic-ui-react'
 
 interface EducationInfo {
   school: {
@@ -27,44 +36,46 @@ export const EducationItem: React.FC<EducationInfo> = ({ school }) => {
     minor,
   } = school
   return (
-    <Item>
-      <Item.Image src={imageUrl} />
-
-      <Item.Content>
-        <Item.Header>{schoolName}</Item.Header>
-        <Item.Meta>
-          <span className="cinema">
-            {startDate} - {endDate}
-          </span>
-        </Item.Meta>
-        <Item.Description>{description}</Item.Description>
-        <Item.Description>
-          {degree && (
-            <Label color="green">
-              <Icon name="graduation" />
-              Degree: <Label.Detail>{degree}</Label.Detail>
-            </Label>
-          )}
-          {minor && (
-            <Label color="teal">
-              Minor: <Label.Detail>{minor}</Label.Detail>
-            </Label>
-          )}
-        </Item.Description>
-        <Item.Extra>
-          <Button
-            basic
-            target="_blank"
-            href={schoolWebsiteUrl}
-            content={`${schoolName} Website`}
-            icon="external"
-            labelPosition="right"
-            secondary
-            floated="right"
-          />
-        </Item.Extra>
-      </Item.Content>
-    </Item>
+    <Segment>
+      <Grid>
+        <Grid.Row>
+          <Grid.Column width="4">
+            <Image src={imageUrl} />
+          </Grid.Column>
+          <Grid.Column width="12">
+            <Header as="h2">
+              {schoolName}
+              <Header.Subheader>
+                {startDate} - {endDate}
+              </Header.Subheader>
+            </Header>
+            <p>{description}</p>
+            <Label.Group size="large">
+              {degree && (
+                <Label color="green">
+                  <Icon name="graduation" />
+                  Degree: <Label.Detail>{degree}</Label.Detail>
+                </Label>
+              )}
+              {minor && (
+                <Label color="teal">
+                  Minor: <Label.Detail>{minor}</Label.Detail>
+                </Label>
+              )}
+            </Label.Group>
+            <Button
+              basic
+              target="_blank"
+              href={schoolWebsiteUrl}
+              content={`${schoolName} Website`}
+              icon="external"
+              labelPosition="right"
+              secondary
+            />
+          </Grid.Column>
+        </Grid.Row>
+      </Grid>
+    </Segment>
   )
 }
 
