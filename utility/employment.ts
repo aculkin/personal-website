@@ -2,19 +2,19 @@ export const employment = [
   {
     companyName: 'Bot Watt',
     imageUrl: '/employment/bot-watt.png',
-    startDate: 'September 2020',
+    startDate: 'January 2021',
     endDate: 'Currently Employed',
     description:
-      "After Roof Rally was shut down in late 2020, Todd and I decided to pivot to a different idea. With Todd's extensive experience with Solar, we decided to pivot to the Renewable Energy data market. We decided to start an online platform that gathered and organized publicly available information about the solar industry. There are already a few companies that are in this market, but their products are extremely expensive, out of reach for most mid-tier solar/renewable energy development companies. We prioritized making our product easy to use, modern and at a significantly lower price than our competition.",
+      'In early 2021, I co-founded a company called Bot Watt in the Renewable Energy data market. Our idea was that we can provide more data and better features than the companies that are currently out there. Utilizing web scraping and a variety of other informaiton gathering methods, we assembled a list of over 130 thousand clean energy projects across the united states.',
     companyWebsiteLink: 'https://www.botwatt.com',
   },
   {
     companyName: 'Roof Rally',
     imageUrl: '/employment/RoofRally-black-words.jpg',
     startDate: 'October 2019',
-    endDate: 'September 2020',
+    endDate: 'November 2020',
     description:
-      'In mid 2019, I co-founded Roof Rally, an online marketplace for roofing needs for homeowners. I co-founded this company with my business partner Todd who’s had many years of experience in the solar industry and by extension the roofing industry. My team and I built a web application that allowed homeowners to essentially “crowd-source” getting prices for their roofing projects to trusted local roofing contractors. We launched in March of 2020 and over the next few months, we had contractors subscribe to our platform, and customers come to get bids. Eventually though, we made the tough decision to cease operations because we weren’t getting enough traction to be successful in the long run. While one could attribute some of Roof Rally’s struggles to the global COVID-19 pandemic of 2020, I don’t like to cite that as the only reason we did not succeed. There were some things we could have done differently, but I learned a lot of valuable lessons about leading a team, managing a business and starting a company.',
+      'In mid 2019, I co-founded Roof Rally, an online marketplace for roofing needs for homeowners. My team and I built a web application that allowed homeowners to easily gather prices and quotes for their roofing projects to local roofing contractors. Roof Rally launched in March of 2020 and over the next few months, we had some initial success with contractors subscribeing to our platform. Unfortunately, with the on-going Covid-19 pandemic of 2020, Roof Rally struggled to get enough homeowners on the platform for the contractors to continue to subscribe. Eventually, we had to make the tough decision to cease operations and close down the business.',
     companyWebsiteLink:
       'https://www.youtube.com/channel/UCChknz9156XoNcul6-Ng9iA',
   },
@@ -24,7 +24,7 @@ export const employment = [
     startDate: 'August 2017',
     endDate: 'June 2019',
     description:
-      'I worked as a Technology Risk consultant for EY for about 2 years. This position involved working closely with senior management in the risk functions of several Fortune 500 companies. One project I worked on involved developing the IT Risk program from scratch for a recently spun off life insurance company. We worked with different business functions to ensure that they had the proper IT controls in place to adequately address their risk. If they didn’t have the appropriate controls we would propose new controls to be implemented.',
+      'As my first job out of college, I worked as a Technology Risk consultant for EY for about 2 years. This position involved working closely with senior management in the risk functions of several Fortune 500 companies. One project I worked on involved developing the IT Risk program from scratch for a recently spun off life insurance company. We worked with different business functions to ensure that they had the proper IT controls in place to adequately address their risk. If they didn’t have the appropriate controls we would propose new controls to be implemented.',
     companyWebsiteLink: 'https://www.ey.com/en_us/consulting',
   },
   {
@@ -37,7 +37,8 @@ export const employment = [
     companyWebsiteLink: 'https://www.ecasolar.com',
   },
   {
-    companyName: 'Ernst & Young - Internship',
+    companyName: 'Ernst & Young',
+    internship: true,
     imageUrl: '/employment/ey_logo.jpg',
     startDate: 'June 2016',
     endDate: 'August 2016',
@@ -46,7 +47,8 @@ export const employment = [
     companyWebsiteLink: 'https://www.ey.com/en_us/consulting',
   },
   {
-    companyName: 'Thermo King - Internship',
+    companyName: 'Thermo King',
+    internship: true,
     imageUrl: '/employment/thermo_king.png',
     startDate: 'June 2015',
     endDate: 'August 2015',
