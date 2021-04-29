@@ -74,7 +74,7 @@ export const Footer: React.FC = () => {
               />
               <Button href="/Andrew_Culkin_Resume.pdf" floated="right" download>
                 <Icon name="download" />
-                Resume
+                Resume -<i> Last Updated: 2019</i>
               </Button>
               <Divider />
               <p>&copy; 2020 - Andrew Culkin</p>
