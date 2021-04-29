@@ -7,6 +7,7 @@ import { toast } from '../../utility/toast'
 import { ContactMeForm } from '../../forms/ContactMeForm'
 
 export const ContactMe: React.FC = (props) => {
+  const [loading, setLoading] = useState(false)
   const [modalOpen, setModalOpen] = useState(false)
   const [contactMeFormData, setContactMeFormData] = useState({
     name: '',
@@ -27,6 +28,7 @@ export const ContactMe: React.FC = (props) => {
 
   const sendEmail = async (): Promise<void> => {
     try {
+      setLoading(true)
       await emailjs.send(
         'service_597o3vb',
         'template_51o9pga',
@@ -37,10 +39,11 @@ export const ContactMe: React.FC = (props) => {
         },
         'user_ioSsmmV57jkAZjF1BYOa8'
       )
-      setModalOpen(false)
       toast('Your message was sent succssfully', 'positive')
+      setLoading(false)
+      setModalOpen(false)
     } catch (error) {
-      console.log(error)
+      toast('Oops, there was an issue sending your message', 'negative')
     }
   }
 
@@ -61,9 +64,8 @@ export const ContactMe: React.FC = (props) => {
       <Modal.Content>
         <Container>
           <p>
-            If you would like to get in touch with me, you can use the form
-            below, or I can be reached by email at{' '}
-            <a href="mailto:andrewsculkin@gmail.com">andrewsculkin@gmail.com</a>
+            If you would like to get in touch with me, please use the form
+            below.
           </p>
         </Container>
         <Divider hidden />
@@ -78,7 +80,7 @@ export const ContactMe: React.FC = (props) => {
         <Button floated="left" secondary onClick={() => setModalOpen(false)}>
           Nevermind
         </Button>
-        <Button primary onClick={sendEmail}>
+        <Button loading={loading} primary onClick={sendEmail}>
           Send Message
         </Button>
       </Modal.Actions>

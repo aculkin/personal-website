@@ -11,7 +11,7 @@ export const Home: React.FC = () => {
   return (
     <MainLayout>
       <Head>
-        <title>Andrew Culkin | Home</title>
+        <title>Andrew Culkin - Website</title>
         <meta
           name="description"
           content="Hi, I'm Andrew and this is my personal website!"
