@@ -1,14 +1,37 @@
 import React from 'react'
 import Head from 'next/head'
-import { Header, Container, Item, Divider } from 'semantic-ui-react'
+import { GetStaticProps } from 'next'
+import { Header, Container } from 'semantic-ui-react'
 
+import { API } from '../../API'
 import { MainLayout } from '../../layouts/main-layout'
 import { EmploymentItem } from '../../components/EmploymentItem'
-import { employment } from '../../utility/employment'
 
-export const Employment: React.FC = () => {
+interface Employment {
+  id: number
+  companyName: string
+  imageUrl: string
+  startDate: string
+  endDate: string
+  description: string
+  internship?: boolean
+  companyWebsiteLink: string
+}
+
+interface EmploymentArray {
+  employment: [Employment]
+}
+
+export const Employment: React.FC<EmploymentArray> = ({ employment }) => {
   return (
     <MainLayout>
+      <Head>
+        <title>Employment</title>
+        <meta
+          name="description"
+          content="Companies I've worked for and startups I've founded"
+        />
+      </Head>
       <div
         style={{
           backgroundImage: 'url(/employment-background.jpg)',
@@ -17,13 +40,6 @@ export const Employment: React.FC = () => {
           paddingBottom: '50px',
         }}
       >
-        <Head>
-          <title>Andrew Culkin | Employment</title>
-          <meta
-            name="description"
-            content="My employment history can be found here"
-          />
-        </Head>
         <Header
           style={{
             paddingTop: '2em',
@@ -45,6 +61,13 @@ export const Employment: React.FC = () => {
       </div>
     </MainLayout>
   )
+}
+
+export const getStaticProps: GetStaticProps = async () => {
+  const { employment } = await API.employment.loadAll()
+  return {
+    props: { employment },
+  }
 }
 
 export default Employment

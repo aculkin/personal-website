@@ -1,12 +1,33 @@
 import * as React from 'react'
 import Head from 'next/head'
+import { GetStaticProps } from 'next'
 import { Card, Divider, Header, Container } from 'semantic-ui-react'
 
+import { API } from '../../API'
 import SkillItem from '../../components/SkillItem'
 import { MainLayout } from '../../layouts/main-layout'
-import { languages, frameworks, technologies } from '../../utility'
 
-export const Skills: React.FC = () => {
+interface Skill {
+  id: number
+  name: string
+  shortDescription: string
+  proficiency: number
+  description: string
+  link: string
+  imgLink: string
+}
+
+interface Skills {
+  languages: [Skill]
+  technologies: [Skill]
+  frameworks: [Skill]
+}
+
+export const Skills: React.FC<Skills> = ({
+  languages,
+  technologies,
+  frameworks,
+}) => {
   return (
     <MainLayout>
       <Head>
@@ -112,6 +133,19 @@ export const Skills: React.FC = () => {
       </div>
     </MainLayout>
   )
+}
+
+export const getStaticProps: GetStaticProps = async () => {
+  const { languages } = await API.languages.loadAll()
+  const { technologies } = await API.technologies.loadAll()
+  const { frameworks } = await API.frameworks.loadAll()
+  return {
+    props: {
+      languages,
+      technologies,
+      frameworks,
+    },
+  }
 }
 
 export default Skills

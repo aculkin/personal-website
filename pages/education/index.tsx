@@ -1,19 +1,36 @@
 import * as React from 'react'
 import Head from 'next/head'
+import { GetStaticProps } from 'next'
 import { Header, Container, Item, Divider } from 'semantic-ui-react'
 
+import { API } from '../../API'
 import { MainLayout } from '../../layouts/main-layout'
 import { EducationItem } from '../../components/EducationItem'
-import { education } from '../../utility'
 
-export const Education: React.FC = () => {
+interface Education {
+  id: number
+  schoolName: string
+  imageUrl: string
+  startDate: string
+  endDate: string
+  degree?: string
+  minor?: string
+  description: string
+  schoolWebsiteUrl: string
+}
+
+interface EducationPage {
+  education: [Education]
+}
+
+export const Education: React.FC<EducationPage> = ({ education }) => {
   return (
     <MainLayout>
       <Head>
-        <title>Andrew Culkin | Education</title>
+        <title>Education</title>
         <meta
           name="description"
-          content="From Lehigh Univresity to Fullstack Academy I've been to a few schools, read about them here!"
+          content="Schools and educational programs I've graduated from or completed"
         />
       </Head>
       <div
@@ -46,6 +63,13 @@ export const Education: React.FC = () => {
       </div>
     </MainLayout>
   )
+}
+
+export const getStaticProps: GetStaticProps = async () => {
+  const { education } = await API.education.loadAll()
+  return {
+    props: { education },
+  }
 }
 
 export default Education
