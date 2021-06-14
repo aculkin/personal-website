@@ -3,27 +3,27 @@ export const pages = [
     link: '/employment',
     name: 'Employment',
     iconName: 'building',
-    description: "Companies I've worked for and startups I've founded",
+    description: "Companies, startups, and other organizations",
   },
   {
     link: '/education',
     name: 'Education',
     iconName: 'graduation',
     description:
-      "Schools and educational programs I've graduated from or completed",
+      "Schools, educational programs, and professional certificates",
   },
   {
     link: '/skills',
     name: 'Skills & Competencies',
     iconName: 'certificate',
     description:
-      "Technologies, tools and frameworks I've worked with over my career",
+      "Technologies, software tools, and development frameworks",
   },
   {
     link: '/projects',
     name: 'Projects',
-    iconName: 'edit',
-    description: "Some of the side projects I've worked on during my career",
+    iconName: 'code',
+    description: "Main projects, and other interesting side projects",
   },
 ]
 

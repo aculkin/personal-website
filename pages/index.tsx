@@ -49,13 +49,13 @@ export const Home: React.FC = () => {
                   as="h1"
                   style={{
                     marginTop: '2em',
-                    fontSize: '5em',
+                    fontSize: '4em',
                     fontWeight: 'bold',
                     color: 'white',
                     textShadow: '2px 2px 8px #000000',
                   }}
                 >
-                  Andrew Culkin
+                  Hi, I'm Andrew Culkin
                   <Header.Subheader
                     style={{
                       marginTop: '1em',
@@ -65,7 +65,7 @@ export const Home: React.FC = () => {
                       textShadow: '2px 2px 8px #000000',
                     }}
                   >
-                    Entrepanuer, Web Developer, and Software Engineer
+                    An entrepreneur, web developer, and software engineer
                   </Header.Subheader>
                   <Header.Subheader
                     style={{
@@ -76,7 +76,8 @@ export const Home: React.FC = () => {
                       textShadow: '2px 2px 8px #000000',
                     }}
                   >
-                    with a passion for startups and clean energy
+                    with a passion for startups, clean energy, and machine
+                    learning.
                   </Header.Subheader>
                 </Header>
               </Grid.Column>
