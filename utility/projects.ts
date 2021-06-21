@@ -5,7 +5,7 @@ export const projects = [
     ongoing: true,
     startDate: 'April 2021',
     endDate: null,
-    description: `Link Smart is a personal project I've been working on in my free time. It's an web app that allows users to create a single web-page that they can edit and customize to link to other sites, like projects they're working on, social media and things like that. It's meant to solve the problem with most social media profiles only letting you put one link in your profile; how do you choose which one? The project is a competitor to the industry leader "Link Tree", except that it provides all of the features and analytics that Link Tree does for free.`,
+    description: `Link Smart is a personal project I've been working on in my free time. It's a web app that allows users to create a single web-page that they can edit and customize to link to other sites, like projects they're working on, social media and things like that. It's meant to solve the problem with most social media profiles only letting you put one link in your profile; how do you choose which one? The project is a competitor to the industry leader "Link Tree", except that it provides all of the features and analytics that Link Tree does for free.`,
     features: [
       'Advanced analytics like views and clicks',
       'Customization options like changing the colors of links',
@@ -33,7 +33,7 @@ export const projects = [
     ongoing: false,
     startDate: 'October 2019',
     endDate: 'November 2020',
-    description: `At Roof Rally, I lead a team of developers to build an online platform where homeowners who needed a new roof could get bids on their roof without ever needing to leave their house. This process involved "digitizing the roof" through a third party, putting together a scope of work for the job, and getting bids from multiple roofing contractors all done automatically through the platform. My work here involved a lot of work with external API's and integration of manual processes into the digital platform.`,
+    description: `At Roof Rally, I led a team of developers to build an online platform where homeowners who needed a new roof, or roof repairs, could get estimates on the price of the project without ever needing to leave their house. This process involved "digitizing the roof" through a third party, putting together a scope of work for the job, and soliciting bids from multiple roofing contractors in the area all done automatically through the platform. My work here involved a lot of work with external API's and integration of typically manual processes into the digital platform.`,
     features: [
       'Modern UI to help a homeowner to choose a roof that looks best for them.',
       'Integration with Salesforce API to track roofing companies, customers and jobs.',
