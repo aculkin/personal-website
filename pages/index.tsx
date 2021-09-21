@@ -16,7 +16,7 @@ const pageStyle = {
 
 const headerStyle = {
   marginTop: '2em',
-  fontSize: '4em',
+  fontSize: '3em',
   fontWeight: 'bold',
   color: 'white',
   textShadow: '2px 2px 8px #000000',
@@ -24,7 +24,7 @@ const headerStyle = {
 
 const subheaderStyle1 = {
   marginTop: '1em',
-  fontSize: '.3em',
+  fontSize: '.4em',
   fontWeight: 'bold',
   color: 'white',
   textShadow: '2px 2px 8px #000000',
@@ -32,7 +32,7 @@ const subheaderStyle1 = {
 
 const subheaderStyle2 = {
   marginBottom: '3em',
-  fontSize: '.3em',
+  fontSize: '.4em',
   fontWeight: 'bold',
   color: 'white',
   textShadow: '2px 2px 8px #000000',
@@ -68,7 +68,7 @@ export const Home: React.FC = () => {
             <Grid.Row>
               <Grid.Column>
                 <Header textAlign="center" as="h1" style={headerStyle}>
-                  Hi, I'm Andrew Culkin
+                  Hi, I'm Andrew &#128075;
                   <Header.Subheader style={subheaderStyle1}>
                     An entrepreneur, web developer, and software engineer
                   </Header.Subheader>
