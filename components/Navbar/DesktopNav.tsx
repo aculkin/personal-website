@@ -15,12 +15,12 @@ export const DesktopNav: React.FC = (props) => {
         <Container>
           <Link href={'/'}>
             <Menu.Item active={pathname === '/'} as="a">
-              Home
+              Andrew Culkin
             </Menu.Item>
           </Link>
-          {navigationItems.map(({ name, address }) => {
+          {navigationItems?.map(({ name, address }, index) => {
             return (
-              <Link key={name} href={address}>
+              <Link key={name || index} href={address}>
                 <Menu.Item active={pathname.includes(address)} as="a">
                   {name}
                 </Menu.Item>

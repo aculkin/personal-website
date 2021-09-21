@@ -22,13 +22,12 @@ export const MobileNav: React.FC = ({ children }) => {
         >
           <Link href={'/'}>
             <Menu.Item active={pathname === '/'} as="a">
-              Home
+              Andrew Culkin
             </Menu.Item>
           </Link>
-          {navigationItems.map((item) => {
-            const { name, address } = item
+          {navigationItems?.map(({ name, address }, index) => {
             return (
-              <Link href={address} key={name}>
+              <Link href={address} key={name || index}>
                 <Menu.Item active={pathname === address} as="a">
                   {name}
                 </Menu.Item>
