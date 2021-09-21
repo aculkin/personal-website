@@ -3,58 +3,63 @@ import { Button, Segment, Image, Header, Grid, List } from 'semantic-ui-react'
 
 interface ProjectInfo {
   project: {
-    projectName: string
-    imageUrl: string
-    ongoing?: boolean
+    id: number
+    name: string
     startDate: string
-    endDate?: string
+    endDate: string
+    imageUrl: string
+    features: string
+    linkName: string
     description: string
-    features?: string[]
-    url: string
+    link: string
   }
 }
 
 export const ProjectItem: React.FC<ProjectInfo> = ({ project }) => {
   const {
-    projectName,
+    name,
     imageUrl,
-    ongoing,
     startDate,
     endDate,
     description,
     features,
-    url,
+    link,
+    linkName,
   } = project
+  const featureArray = features?.split(';') || []
   return (
-    <Segment style={{ padding: '30px' }}>
+    <Segment raised style={{ padding: '15px' }}>
       <Grid stackable>
         <Grid.Row>
           <Grid.Column width="4">
-            <Image href={url} target="_blank" fluid src={imageUrl} />
+            <Image href={link} target="_blank" fluid src={imageUrl} />
           </Grid.Column>
-          <Grid.Column width="6">
+          <Grid.Column width="7">
             <Header as="h2">
-              {projectName}
+              {name}
               <Header.Subheader>
-                {startDate} - {ongoing ? 'In progress' : endDate}
+                {startDate} - {endDate}
               </Header.Subheader>
             </Header>
             <p>{description}</p>
           </Grid.Column>
-          <Grid.Column width="6">
-            <Header as="h3">Features:</Header>
-            {features?.length > 0 && (
-              <List bulleted>
-                {features.map((feature, index) => {
-                  return <List.Item key={index}>{feature}</List.Item>
-                })}
-              </List>
+          <Grid.Column width="5">
+            {featureArray?.length > 0 && (
+              <>
+                <Header as="h3">Features:</Header>
+                <List bulleted>
+                  {featureArray?.map((feature, index) => {
+                    return <List.Item key={index}>{feature}</List.Item>
+                  })}
+                </List>
+              </>
             )}
             <Button
               basic
+              fluid
               target="_blank"
-              href={url}
-              content={`${projectName} Website`}
+              href={link}
+              content={linkName}
               icon="external"
               labelPosition="right"
               secondary
