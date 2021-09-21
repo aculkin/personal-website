@@ -7,6 +7,21 @@ import { API } from '../../API'
 import { MainLayout } from '../../layouts/main-layout'
 import { EmploymentItem } from '../../components/EmploymentItem'
 
+const pageStyle = {
+  backgroundImage: 'url(/employment-background.jpg)',
+  backgroundSize: 'cover',
+  backgroundAttachment: 'fixed',
+  paddingBottom: '50px',
+}
+
+const headingStyle = {
+  paddingTop: '2em',
+  fontSize: '3em',
+  fontWeight: 'bold',
+  color: 'white',
+  textShadow: '2px 2px 8px #000000',
+}
+
 interface Employment {
   id: number
   companyName: string
@@ -32,25 +47,8 @@ export const Employment: React.FC<EmploymentArray> = ({ employment }) => {
           content="Companies I've worked for and startups I've founded"
         />
       </Head>
-      <div
-        style={{
-          backgroundImage: 'url(/employment-background.jpg)',
-          backgroundSize: 'cover',
-          backgroundAttachment: 'fixed',
-          paddingBottom: '50px',
-        }}
-      >
-        <Header
-          style={{
-            paddingTop: '2em',
-            fontSize: '3em',
-            fontWeight: 'bold',
-            color: 'white',
-            textShadow: '2px 2px 8px #000000',
-          }}
-          textAlign="center"
-          as="h1"
-        >
+      <div style={pageStyle}>
+        <Header style={headingStyle} textAlign="center" as="h1">
           Employment
         </Header>
         <Container>

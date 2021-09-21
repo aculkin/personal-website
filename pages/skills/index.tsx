@@ -23,6 +23,13 @@ interface Skills {
   frameworks: [Skill]
 }
 
+const pageStyle = {
+  backgroundImage: 'url(/skills-background.jpg)',
+  backgroundSize: 'cover',
+  backgroundAttachment: 'fixed',
+  paddingBottom: '50px',
+}
+
 const headerStyle = {
   paddingTop: '2em',
   fontSize: '3em',
@@ -31,7 +38,13 @@ const headerStyle = {
   textShadow: '2px 2px 8px #000000',
 }
 
-const subheaderStyle = {
+const subheaderStyle1 = {
+  fontSize: '.4em',
+  color: 'white',
+  textShadow: '2px 2px 8px #000000',
+}
+
+const subheaderStyle2 = {
   fontSize: '1.75em',
   fontWeight: 'bold',
   color: 'white',
@@ -52,24 +65,11 @@ export const Skills: React.FC<Skills> = ({
           content="All the teechnologies I've worked with, and skills I've developed over the years"
         />
       </Head>
-      <div
-        style={{
-          backgroundImage: 'url(/skills-background.jpg)',
-          backgroundSize: 'cover',
-          backgroundAttachment: 'fixed',
-          paddingBottom: '50px',
-        }}
-      >
+      <div style={pageStyle}>
         <Container>
           <Header style={headerStyle} textAlign="center" as="h1">
             Skills
-            <Header.Subheader
-              style={{
-                fontSize: '.4em',
-                color: 'white',
-                textShadow: '2px 2px 8px #000000',
-              }}
-            >
+            <Header.Subheader style={subheaderStyle1}>
               Frameworks, Technologies, and Languages I&apos;ve worked with
             </Header.Subheader>
           </Header>
@@ -77,7 +77,7 @@ export const Skills: React.FC<Skills> = ({
         </Container>
         <Container>
           <Divider />
-          <Header style={subheaderStyle} textAlign="center" as="h2">
+          <Header style={subheaderStyle2} textAlign="center" as="h2">
             Frameworks
           </Header>
           <Divider hidden />
@@ -91,7 +91,7 @@ export const Skills: React.FC<Skills> = ({
             ))}
           </Card.Group>
           <Divider />
-          <Header style={subheaderStyle} textAlign="center" as="h2">
+          <Header style={subheaderStyle2} textAlign="center" as="h2">
             Technologies
           </Header>
           <Divider hidden />
@@ -106,7 +106,7 @@ export const Skills: React.FC<Skills> = ({
           </Card.Group>
           <Divider hidden />
           <Divider />
-          <Header style={subheaderStyle} textAlign="center" as="h2">
+          <Header style={subheaderStyle2} textAlign="center" as="h2">
             Languages
           </Header>
           <Divider hidden />
