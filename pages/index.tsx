@@ -1,11 +1,42 @@
 import * as React from 'react'
 import Head from 'next/head'
-import Link from 'next/link'
 import { Header, Card, Container, Divider, Grid } from 'semantic-ui-react'
 
 import { MainLayout } from '../layouts/main-layout'
 import { HomePageCard } from '../components/HomePageCard'
 import { pages } from '../utility'
+
+const pageStyle = {
+  backgroundImage: 'url(/background-image.jpg)',
+  backgroundSize: 'cover',
+  minHeight: '100vh',
+  backgroundAttachment: 'fixed',
+  paddingBottom: '3em',
+}
+
+const headerStyle = {
+  marginTop: '2em',
+  fontSize: '4em',
+  fontWeight: 'bold',
+  color: 'white',
+  textShadow: '2px 2px 8px #000000',
+}
+
+const subheaderStyle1 = {
+  marginTop: '1em',
+  fontSize: '.3em',
+  fontWeight: 'bold',
+  color: 'white',
+  textShadow: '2px 2px 8px #000000',
+}
+
+const subheaderStyle2 = {
+  marginBottom: '3em',
+  fontSize: '.3em',
+  fontWeight: 'bold',
+  color: 'white',
+  textShadow: '2px 2px 8px #000000',
+}
 
 export const Home: React.FC = () => {
   return (
@@ -31,51 +62,17 @@ export const Home: React.FC = () => {
           src="https://cdn.jsdelivr.net/npm/toastify-js"
         />
       </Head>
-      <div
-        style={{
-          backgroundImage: 'url(/background-image.jpg)',
-          backgroundSize: 'cover',
-          minHeight: '100vh',
-          backgroundAttachment: 'fixed',
-          paddingBottom: '3em',
-        }}
-      >
+      <div style={pageStyle}>
         <Container>
           <Grid>
             <Grid.Row>
               <Grid.Column>
-                <Header
-                  textAlign="center"
-                  as="h1"
-                  style={{
-                    marginTop: '2em',
-                    fontSize: '4em',
-                    fontWeight: 'bold',
-                    color: 'white',
-                    textShadow: '2px 2px 8px #000000',
-                  }}
-                >
+                <Header textAlign="center" as="h1" style={headerStyle}>
                   Hi, I'm Andrew Culkin
-                  <Header.Subheader
-                    style={{
-                      marginTop: '1em',
-                      fontSize: '.3em',
-                      fontWeight: 'bold',
-                      color: 'white',
-                      textShadow: '2px 2px 8px #000000',
-                    }}
-                  >
+                  <Header.Subheader style={subheaderStyle1}>
                     An entrepreneur, web developer, and software engineer
                   </Header.Subheader>
-                  <Header.Subheader
-                    style={{
-                      marginBottom: '3em',
-                      fontSize: '.3em',
-                      fontWeight: 'bold',
-                      color: 'white',
-                      textShadow: '2px 2px 8px #000000',
-                    }}
-                  >
+                  <Header.Subheader style={subheaderStyle2}>
                     with a passion for startups, clean energy, and machine
                     learning.
                   </Header.Subheader>
@@ -86,8 +83,10 @@ export const Home: React.FC = () => {
             <Grid.Row>
               <Grid.Column>
                 <Card.Group centered>
-                  {pages.map((page) => {
-                    return <HomePageCard key={page.name} page={page} />
+                  {pages?.map((page, index) => {
+                    return (
+                      <HomePageCard key={page?.name || index} page={page} />
+                    )
                   })}
                 </Card.Group>
               </Grid.Column>

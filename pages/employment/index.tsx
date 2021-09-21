@@ -54,8 +54,11 @@ export const Employment: React.FC<EmploymentArray> = ({ employment }) => {
           Employment
         </Header>
         <Container>
-          {employment.map((company) => (
-            <EmploymentItem key={company.companyName} company={company} />
+          {employment?.map((company, index) => (
+            <EmploymentItem
+              key={company?.companyName || index}
+              company={company}
+            />
           ))}
         </Container>
       </div>

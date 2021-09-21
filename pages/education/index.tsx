@@ -55,8 +55,8 @@ export const Education: React.FC<EducationPage> = ({ education }) => {
           Education
         </Header>
         <Container>
-          {education.map((school) => (
-            <EducationItem key={school.schoolName} school={school} />
+          {education?.map((school, index) => (
+            <EducationItem key={school?.schoolName || index} school={school} />
           ))}
           <Divider hidden />
         </Container>

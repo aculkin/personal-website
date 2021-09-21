@@ -23,6 +23,21 @@ interface Skills {
   frameworks: [Skill]
 }
 
+const headerStyle = {
+  paddingTop: '2em',
+  fontSize: '3em',
+  fontWeight: 'bold',
+  color: 'white',
+  textShadow: '2px 2px 8px #000000',
+}
+
+const subheaderStyle = {
+  fontSize: '1.75em',
+  fontWeight: 'bold',
+  color: 'white',
+  textShadow: '2px 2px 8px #000000',
+}
+
 export const Skills: React.FC<Skills> = ({
   languages,
   technologies,
@@ -34,7 +49,7 @@ export const Skills: React.FC<Skills> = ({
         <title>Andrew Culkin | Skills</title>
         <meta
           name="description"
-          content="All the teechnologies I've worked with, and skills I have"
+          content="All the teechnologies I've worked with, and skills I've developed over the years"
         />
       </Head>
       <div
@@ -46,17 +61,7 @@ export const Skills: React.FC<Skills> = ({
         }}
       >
         <Container>
-          <Header
-            style={{
-              paddingTop: '2em',
-              fontSize: '3em',
-              fontWeight: 'bold',
-              color: 'white',
-              textShadow: '2px 2px 8px #000000',
-            }}
-            textAlign="center"
-            as="h1"
-          >
+          <Header style={headerStyle} textAlign="center" as="h1">
             Skills
             <Header.Subheader
               style={{
@@ -72,61 +77,46 @@ export const Skills: React.FC<Skills> = ({
         </Container>
         <Container>
           <Divider />
-          <Header
-            style={{
-              fontSize: '1.75em',
-              fontWeight: 'bold',
-              color: 'white',
-              textShadow: '2px 2px 8px #000000',
-            }}
-            textAlign="center"
-            as="h2"
-          >
+          <Header style={subheaderStyle} textAlign="center" as="h2">
             Frameworks
           </Header>
           <Divider hidden />
           <Card.Group stackable doubling centered itemsPerRow={5}>
-            {frameworks.map((skill) => (
-              <SkillItem skill={skill} key={skill.name} type="framework" />
+            {frameworks?.map((skill, index) => (
+              <SkillItem
+                skill={skill}
+                key={skill?.name || index}
+                type="framework"
+              />
             ))}
           </Card.Group>
           <Divider />
-          <Header
-            style={{
-              fontSize: '1.75em',
-              fontWeight: 'bold',
-              color: 'white',
-              textShadow: '2px 2px 8px #000000',
-            }}
-            textAlign="center"
-            as="h2"
-          >
+          <Header style={subheaderStyle} textAlign="center" as="h2">
             Technologies
           </Header>
           <Divider hidden />
           <Card.Group stackable doubling centered itemsPerRow={5}>
-            {technologies.map((skill) => (
-              <SkillItem skill={skill} key={skill.name} type="technology" />
+            {technologies?.map((skill, index) => (
+              <SkillItem
+                skill={skill}
+                key={skill?.name || index}
+                type="technology"
+              />
             ))}
           </Card.Group>
           <Divider hidden />
           <Divider />
-          <Header
-            style={{
-              fontSize: '1.75em',
-              fontWeight: 'bold',
-              color: 'white',
-              textShadow: '2px 2px 8px #000000',
-            }}
-            textAlign="center"
-            as="h2"
-          >
+          <Header style={subheaderStyle} textAlign="center" as="h2">
             Languages
           </Header>
           <Divider hidden />
           <Card.Group stackable doubling centered itemsPerRow={5}>
-            {languages.map((skill) => (
-              <SkillItem skill={skill} key={skill.name} type="language" />
+            {languages?.map((skill, index) => (
+              <SkillItem
+                skill={skill}
+                key={skill?.name || index}
+                type="language"
+              />
             ))}
           </Card.Group>
         </Container>
