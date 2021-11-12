@@ -17,6 +17,7 @@ module.exports = {
     'plugin:@typescript-eslint/recommended',
     'prettier/@typescript-eslint',
     'plugin:prettier/recommended',
+    'prettier',
   ],
   rules: {
     // Place here to specify ESLint rules.
