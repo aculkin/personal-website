@@ -1,5 +1,6 @@
 import * as React from 'react'
 import Head from 'next/head'
+import { GetStaticProps } from 'next'
 import {
   Header,
   Card,
@@ -9,10 +10,10 @@ import {
   Message,
 } from 'semantic-ui-react'
 
+import { MainContentItems } from '../interfaces/main'
 import { MainLayout } from '../layouts/main-layout'
 import { HomePageCard } from '../components/HomePageCard'
 import { pages } from '../utility'
-import { GetStaticProps } from 'next'
 import API from '../API'
 
 const pageStyle = {
@@ -47,17 +48,9 @@ const subheaderStyle2 = {
   color: 'white',
   textShadow: '2px 2px 8px #000000',
 }
-interface Content {
-  content: string
-  id: number
-}
-
-interface MainContentItems {
-  sectionItems: { [key: string]: Content }
-}
 
 export const Home: React.FC<MainContentItems> = ({ sectionItems }) => {
-  const { heading, metaPageDescription, subHeading } = sectionItems
+  const { heading, metaPageDescription, subHeading, message } = sectionItems
   const subHeadContent = subHeading.content
   let subHead1 = subHeadContent
     .split(' ')
@@ -103,10 +96,7 @@ export const Home: React.FC<MainContentItems> = ({ sectionItems }) => {
                 </Header>
                 <Container textAlign="center">
                   <Message floating compact positive>
-                    {/* <Message.Header>
-                      This is my personaly website
-                    </Message.Header> */}
-                    This is my personaly Checkout some of the things I'm working on below!
+                    {message.content}
                   </Message>
                 </Container>
               </Grid.Column>
