@@ -1,33 +1,20 @@
 import React from 'react'
 import {
-  Item,
   Label,
   Icon,
   Button,
   Segment,
   Header,
   Image,
-  Divider,
   Grid,
 } from 'semantic-ui-react'
+import { EducationInfoInterface } from '../../interfaces/education'
+import { getImageUrl } from '../../utility'
 
-interface EducationInfo {
-  school: {
-    schoolName: string
-    imageUrl: string
-    schoolWebsiteUrl: string
-    startDate: string
-    endDate: string
-    description: string
-    degree?: string
-    minor?: string
-  }
-}
-
-export const EducationItem: React.FC<EducationInfo> = ({ school }) => {
+export const EducationItem: React.FC<EducationInfoInterface> = ({ school }) => {
   const {
     schoolName,
-    imageUrl,
+    awsKey,
     startDate,
     endDate,
     description,
@@ -40,7 +27,7 @@ export const EducationItem: React.FC<EducationInfo> = ({ school }) => {
       <Grid>
         <Grid.Row>
           <Grid.Column width="4">
-            <Image src={imageUrl} />
+            <Image src={getImageUrl(awsKey)} />
           </Grid.Column>
           <Grid.Column width="12">
             <Header as="h2">

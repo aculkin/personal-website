@@ -1,24 +1,12 @@
 import React from 'react'
 import { Button, Segment, Image, Header, Grid, List } from 'semantic-ui-react'
+import { getImageUrl } from '../../utility'
+import { ProjectInfoInterface } from '../../interfaces/projects'
 
-interface ProjectInfo {
-  project: {
-    id: number
-    name: string
-    startDate: string
-    endDate: string
-    imageUrl: string
-    features: string
-    linkName: string
-    description: string
-    link: string
-  }
-}
-
-export const ProjectItem: React.FC<ProjectInfo> = ({ project }) => {
+export const ProjectItem: React.FC<ProjectInfoInterface> = ({ project }) => {
   const {
     name,
-    imageUrl,
+    awsKey,
     startDate,
     endDate,
     description,
@@ -32,7 +20,12 @@ export const ProjectItem: React.FC<ProjectInfo> = ({ project }) => {
       <Grid stackable>
         <Grid.Row>
           <Grid.Column width="4">
-            <Image href={link} target="_blank" fluid src={imageUrl} />
+            <Image
+              href={link}
+              target="_blank"
+              fluid
+              src={getImageUrl(awsKey)}
+            />
           </Grid.Column>
           <Grid.Column width="7">
             <Header as="h2">

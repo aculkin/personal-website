@@ -1,23 +1,15 @@
 import React from 'react'
 import { Button, Segment, Image, Header, Grid, Label } from 'semantic-ui-react'
+import { getImageUrl } from '../../utility'
+import { EmploymentInfoInterface } from '../../interfaces/employment'
 
-interface EmploymentInfo {
-  company: {
-    companyName: string
-    internship?: boolean
-    imageUrl: string
-    startDate: string
-    endDate: string
-    description: string
-    companyWebsiteLink: string
-  }
-}
-
-export const EmploymentItem: React.FC<EmploymentInfo> = ({ company }) => {
+export const EmploymentItem: React.FC<EmploymentInfoInterface> = ({
+  company,
+}) => {
   const {
     companyName,
     internship,
-    imageUrl,
+    awsKey,
     startDate,
     endDate,
     description,
@@ -32,7 +24,7 @@ export const EmploymentItem: React.FC<EmploymentInfo> = ({ company }) => {
               href={companyWebsiteLink}
               target="_blank"
               fluid
-              src={imageUrl}
+              src={getImageUrl(awsKey)}
             />
           </Grid.Column>
           <Grid.Column width="12">
