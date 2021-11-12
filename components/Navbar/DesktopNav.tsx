@@ -1,7 +1,7 @@
 import React from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
-import { Segment, Container, Menu } from 'semantic-ui-react'
+import { Container, Menu } from 'semantic-ui-react'
 
 import { Media } from './index'
 import { navigationItems } from './navigationItems'

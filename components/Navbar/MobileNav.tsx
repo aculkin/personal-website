@@ -20,6 +20,10 @@ export const MobileNav: React.FC = ({ children }) => {
           vertical
           visible={sidebarOpened}
         >
+          <Menu.Item as="a" onClick={() => setSidebarOpened(false)}>
+            <Icon name="close" />
+            Close
+          </Menu.Item>
           <Link href={'/'}>
             <Menu.Item active={pathname === '/'} as="a">
               Andrew Culkin
@@ -37,7 +41,7 @@ export const MobileNav: React.FC = ({ children }) => {
         </Sidebar>
 
         <Sidebar.Pusher dimmed={sidebarOpened}>
-          <Menu fixed="top">
+          <Menu fixed="top" inverted>
             <Menu.Item onClick={() => setSidebarOpened(!sidebarOpened)}>
               <Icon name="sidebar" />
             </Menu.Item>
