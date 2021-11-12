@@ -3,25 +3,10 @@ import Head from 'next/head'
 import { GetStaticProps } from 'next'
 import { Card, Divider, Header, Container } from 'semantic-ui-react'
 
-import { API } from '../../API'
 import SkillItem from '../../components/SkillItem'
+import { SkillsInterface } from '../../interfaces/skills'
+import { API } from '../../API'
 import { MainLayout } from '../../layouts/main-layout'
-
-interface Skill {
-  id: number
-  name: string
-  shortDescription: string
-  proficiency: number
-  description: string
-  link: string
-  imgLink: string
-}
-
-interface Skills {
-  languages: [Skill]
-  technologies: [Skill]
-  frameworks: [Skill]
-}
 
 const pageStyle = {
   backgroundImage: 'url(/skills-background.jpg)',
@@ -51,7 +36,7 @@ const subheaderStyle2 = {
   textShadow: '2px 2px 8px #000000',
 }
 
-export const Skills: React.FC<Skills> = ({
+export const SkillsPage: React.FC<SkillsInterface> = ({
   languages,
   technologies,
   frameworks,
@@ -138,4 +123,4 @@ export const getStaticProps: GetStaticProps = async () => {
   }
 }
 
-export default Skills
+export default SkillsPage

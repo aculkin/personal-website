@@ -6,6 +6,7 @@ import { Header, Container } from 'semantic-ui-react'
 import { API } from '../../API'
 import { MainLayout } from '../../layouts/main-layout'
 import { ProjectItem } from '../../components/ProjectItem'
+import { ProjectArrayInterface } from '../../interfaces/projects'
 
 const pageStyle = {
   backgroundImage: 'url(/projects-background.jpg)',
@@ -22,23 +23,7 @@ const headingStyle = {
   textShadow: '2px 2px 8px #000000',
 }
 
-interface Project {
-  id: number
-  name: string
-  startDate: string
-  endDate: string
-  imageUrl: string
-  features: string
-  linkName: string
-  description: string
-  link: string
-}
-
-interface ProjectArray {
-  projects: [Project]
-}
-
-export const Projects: React.FC<ProjectArray> = ({ projects }) => {
+export const ProjectsPage: React.FC<ProjectArrayInterface> = ({ projects }) => {
   return (
     <MainLayout>
       <Head>
@@ -69,4 +54,4 @@ export const getStaticProps: GetStaticProps = async () => {
   }
 }
 
-export default Projects
+export default ProjectsPage

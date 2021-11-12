@@ -1,10 +1,19 @@
 import * as React from 'react'
 import Head from 'next/head'
-import { Header, Card, Container, Divider, Grid } from 'semantic-ui-react'
+import {
+  Header,
+  Card,
+  Container,
+  Divider,
+  Grid,
+  Message,
+} from 'semantic-ui-react'
 
 import { MainLayout } from '../layouts/main-layout'
 import { HomePageCard } from '../components/HomePageCard'
 import { pages } from '../utility'
+import { GetStaticProps } from 'next'
+import API from '../API'
 
 const pageStyle = {
   backgroundImage: 'url(/background-image.jpg)',
@@ -24,7 +33,8 @@ const headerStyle = {
 
 const subheaderStyle1 = {
   marginTop: '1em',
-  fontSize: '.4em',
+  marginBottom: '.3em',
+  fontSize: '.5em',
   fontWeight: 'bold',
   color: 'white',
   textShadow: '2px 2px 8px #000000',
@@ -32,21 +42,36 @@ const subheaderStyle1 = {
 
 const subheaderStyle2 = {
   marginBottom: '3em',
-  fontSize: '.4em',
+  fontSize: '.5em',
   fontWeight: 'bold',
   color: 'white',
   textShadow: '2px 2px 8px #000000',
 }
+interface Content {
+  content: string
+  id: number
+}
 
-export const Home: React.FC = () => {
+interface MainContentItems {
+  sectionItems: { [key: string]: Content }
+}
+
+export const Home: React.FC<MainContentItems> = ({ sectionItems }) => {
+  const { heading, metaPageDescription, subHeading } = sectionItems
+  const subHeadContent = subHeading.content
+  let subHead1 = subHeadContent
+    .split(' ')
+    .slice(0, subHeadContent.split(' ').length / 2)
+    .join(' ')
+  let subHead2 = subHeadContent
+    .split(' ')
+    .slice(subHeadContent.split(' ').length / 2)
+    .join(' ')
   return (
     <MainLayout>
       <Head>
         <title>Andrew Culkin - Website</title>
-        <meta
-          name="description"
-          content="Hi, I'm Andrew and this is my personal website!"
-        />
+        <meta name="description" content={metaPageDescription.content} />
         <link rel="icon" href="/favicon.ico" />
         <link
           rel="stylesheet"
@@ -68,15 +93,22 @@ export const Home: React.FC = () => {
             <Grid.Row>
               <Grid.Column>
                 <Header textAlign="center" as="h1" style={headerStyle}>
-                  Hi, I'm Andrew &#128075;
+                  {heading.content} &#128075;
                   <Header.Subheader style={subheaderStyle1}>
-                    An entrepreneur, web developer, and software engineer
+                    {subHead1}
                   </Header.Subheader>
                   <Header.Subheader style={subheaderStyle2}>
-                    with a passion for startups, clean energy, and machine
-                    learning.
+                    {subHead2}
                   </Header.Subheader>
                 </Header>
+                <Container textAlign="center">
+                  <Message floating compact positive>
+                    {/* <Message.Header>
+                      This is my personaly website
+                    </Message.Header> */}
+                    This is my personaly Checkout some of the things I'm working on below!
+                  </Message>
+                </Container>
               </Grid.Column>
             </Grid.Row>
             <Divider />
@@ -96,6 +128,19 @@ export const Home: React.FC = () => {
       </div>
     </MainLayout>
   )
+}
+
+export const getStaticProps: GetStaticProps = async () => {
+  const { mainContent } = await API.mainContent.loadAll()
+
+  let sectionItems = {}
+  mainContent.forEach(({ id, key, content }) => {
+    sectionItems[key] = { id, content }
+  })
+
+  return {
+    props: { sectionItems },
+  }
 }
 
 export default Home

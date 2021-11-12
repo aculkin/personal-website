@@ -6,6 +6,7 @@ import { Header, Container } from 'semantic-ui-react'
 import { API } from '../../API'
 import { MainLayout } from '../../layouts/main-layout'
 import { EmploymentItem } from '../../components/EmploymentItem'
+import { EmploymentArrayInterface } from '../../interfaces/employment'
 
 const pageStyle = {
   backgroundImage: 'url(/employment-background.jpg)',
@@ -22,22 +23,7 @@ const headingStyle = {
   textShadow: '2px 2px 8px #000000',
 }
 
-interface Employment {
-  id: number
-  companyName: string
-  imageUrl: string
-  startDate: string
-  endDate: string
-  description: string
-  internship?: boolean
-  companyWebsiteLink: string
-}
-
-interface EmploymentArray {
-  employment: [Employment]
-}
-
-export const Employment: React.FC<EmploymentArray> = ({ employment }) => {
+export const EmploymentPage: React.FC<EmploymentArrayInterface> = ({ employment }) => {
   return (
     <MainLayout>
       <Head>
@@ -71,4 +57,4 @@ export const getStaticProps: GetStaticProps = async () => {
   }
 }
 
-export default Employment
+export default EmploymentPage

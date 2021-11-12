@@ -6,6 +6,7 @@ import { Header, Container, Divider } from 'semantic-ui-react'
 import { API } from '../../API'
 import { MainLayout } from '../../layouts/main-layout'
 import { EducationItem } from '../../components/EducationItem'
+import { EducationPageInterface } from '../../interfaces/education'
 
 const pageStyle = {
   backgroundImage: 'url(/education-background.jpg)',
@@ -22,23 +23,9 @@ const headingStyle = {
   textShadow: '2px 2px 8px #000000',
 }
 
-interface Education {
-  id: number
-  schoolName: string
-  imageUrl: string
-  startDate: string
-  endDate: string
-  degree?: string
-  minor?: string
-  description: string
-  schoolWebsiteUrl: string
-}
-
-interface EducationPage {
-  education: [Education]
-}
-
-export const Education: React.FC<EducationPage> = ({ education }) => {
+export const EducationPage: React.FC<EducationPageInterface> = ({
+  education,
+}) => {
   return (
     <MainLayout>
       <Head>
@@ -70,4 +57,4 @@ export const getStaticProps: GetStaticProps = async () => {
   }
 }
 
-export default Education
+export default EducationPage
