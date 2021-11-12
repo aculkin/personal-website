@@ -4,6 +4,7 @@ import { projects } from './projects'
 import { frameworks } from './frameworks'
 import { languages } from './languages'
 import { technologies } from './technologies'
+import { mainContent } from './mainContent'
 
 export const API = {
   education,
@@ -12,6 +13,7 @@ export const API = {
   frameworks,
   languages,
   technologies,
+  mainContent,
 }
 
 export default API

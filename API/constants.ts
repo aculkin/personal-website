@@ -9,4 +9,5 @@ export const URLs = {
   frameworks: `${sheetlyBaseUrl}/${spreadsheetName}/frameworks`,
   technologies: `${sheetlyBaseUrl}/${spreadsheetName}/technologies`,
   languages: `${sheetlyBaseUrl}/${spreadsheetName}/languages`,
+  mainContent: `${sheetlyBaseUrl}/${spreadsheetName}/mainContent`,
 }
