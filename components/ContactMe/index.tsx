@@ -77,10 +77,10 @@ export const ContactMe: React.FC = (props) => {
         <div>{props.children}</div>
       </Modal.Content>
       <Modal.Actions>
-        <Button floated="left" secondary onClick={() => setModalOpen(false)}>
-          Nevermind
+        <Button floated="left" color="red" onClick={() => setModalOpen(false)}>
+          Cancel
         </Button>
-        <Button loading={loading} primary onClick={sendEmail}>
+        <Button loading={loading} color="green" onClick={sendEmail}>
           Send Message
         </Button>
       </Modal.Actions>

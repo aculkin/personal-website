@@ -20,14 +20,14 @@ export const ContactMeForm: React.FC<ContactMe> = ({
           name="name"
           value={name}
           label="Name"
-          placeholder="Name..."
+          placeholder="Tell me your name..."
         />
         <Form.Input
           name="email"
           onChange={handleChange}
           value={email}
           label="Email"
-          placeholder="Email..."
+          placeholder="What's a good email for you..."
         />
       </Form.Group>
       <Form.TextArea
@@ -35,7 +35,7 @@ export const ContactMeForm: React.FC<ContactMe> = ({
         onChange={handleTextAreaChange}
         label="Message"
         value={message}
-        placeholder="Type your message here..."
+        placeholder="What would you like to get in touch about..."
       />
     </Form>
   )

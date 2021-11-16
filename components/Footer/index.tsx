@@ -84,9 +84,14 @@ export const Footer: React.FC = () => {
                 color="twitter"
                 icon="twitter square"
               />
-              <Button href="/Andrew_Culkin_Resume.pdf" floated="right" download>
+              <Button
+                href="https://culkin-website-images.s3.us-west-2.amazonaws.com/other-assets/resume"
+                floated="right"
+                download
+                target="_blank"
+              >
                 <Icon name="download" />
-                Resume - <i>Updated: October 2021</i>
+                Andrew's Resume - <i>(Updated: November 2021)</i>
               </Button>
               <Divider />
               <p>&copy; {new Date().getFullYear()} - Andrew Culkin</p>
