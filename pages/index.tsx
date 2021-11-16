@@ -63,7 +63,7 @@ export const Home: React.FC<MainContentItems> = ({ sectionItems }) => {
   return (
     <MainLayout>
       <Head>
-        <title>Andrew Culkin - Website</title>
+        <title>Andrew Culkin</title>
         <meta name="description" content={metaPageDescription.content} />
         <link rel="icon" href="/favicon.ico" />
         <link

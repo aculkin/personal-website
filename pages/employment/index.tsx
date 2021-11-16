@@ -27,7 +27,7 @@ export const EmploymentPage: React.FC<EmploymentArrayInterface> = ({ employment 
   return (
     <MainLayout>
       <Head>
-        <title>Employment</title>
+        <title>Andrew Culkin | Employment</title>
         <meta
           name="description"
           content="Companies I've worked for and startups I've founded"

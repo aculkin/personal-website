@@ -29,10 +29,10 @@ export const EducationPage: React.FC<EducationPageInterface> = ({
   return (
     <MainLayout>
       <Head>
-        <title>Education</title>
+        <title>Andrew Culkin | Education</title>
         <meta
           name="description"
-          content="Schools and educational programs I've graduated from or completed"
+          content="Schools I've graduated from and and educational programs and courses I've completed"
         />
       </Head>
       <div style={pageStyle}>

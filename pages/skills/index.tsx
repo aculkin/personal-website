@@ -47,7 +47,7 @@ export const SkillsPage: React.FC<SkillsInterface> = ({
         <title>Andrew Culkin | Skills</title>
         <meta
           name="description"
-          content="All the teechnologies I've worked with, and skills I've developed over the years"
+          content="All the Languages, Technologies and Development Frameworks I've worked with over my career."
         />
       </Head>
       <div style={pageStyle}>

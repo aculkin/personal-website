@@ -30,7 +30,7 @@ export const ProjectsPage: React.FC<ProjectArrayInterface> = ({ projects }) => {
         <title>Andrew Culkin | Projects</title>
         <meta
           name="description"
-          content="The projects I've worked on over the course of my career can be found here."
+          content="Projects I'm currently working on, or have worked on over the course of my career."
         />
       </Head>
       <div style={pageStyle}>
