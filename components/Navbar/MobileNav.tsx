@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, ReactNode } from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { Sidebar, Menu, Button, Icon } from 'semantic-ui-react'
@@ -6,7 +6,11 @@ import { Sidebar, Menu, Button, Icon } from 'semantic-ui-react'
 import { Media } from './index'
 import { navigationItems } from './navigationItems'
 
-export const MobileNav: React.FC = ({ children }) => {
+interface Props {
+  children: ReactNode
+}
+
+export const MobileNav: React.FC<Props> = ({ children }) => {
   const [sidebarOpened, setSidebarOpened] = useState(false)
   const { pathname } = useRouter()
   return (

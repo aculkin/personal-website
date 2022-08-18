@@ -3,10 +3,10 @@ import { Modal, Button, Container, Divider } from 'semantic-ui-react'
 import emailjs, { init } from 'emailjs-com'
 init('user_ioSsmmV57jkAZjF1BYOa8')
 
-import { toast } from '../../utility/toast'
+import { toast } from '../../utility'
 import { ContactMeForm } from '../../forms/ContactMeForm'
 
-export const ContactMe: React.FC = (props) => {
+export const ContactMe: React.FC = () => {
   const [loading, setLoading] = useState(false)
   const [modalOpen, setModalOpen] = useState(false)
   const [contactMeFormData, setContactMeFormData] = useState({
@@ -74,7 +74,6 @@ export const ContactMe: React.FC = (props) => {
           handleChange={handleChange}
           handleTextAreaChange={handleTextAreaChange}
         />
-        <div>{props.children}</div>
       </Modal.Content>
       <Modal.Actions>
         <Button floated="left" color="red" onClick={() => setModalOpen(false)}>

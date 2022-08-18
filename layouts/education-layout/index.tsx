@@ -1,9 +1,9 @@
-import * as React from 'react'
+import React, { ReactNode } from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { Grid, Menu, Header, Container } from 'semantic-ui-react'
 
-export const EducationLayout: React.FC = (props) => {
+export const EducationLayout: React.FC = ({ children }: { children: ReactNode }) => {
   const { pathname } = useRouter()
   return (
     <Container>
@@ -30,7 +30,7 @@ export const EducationLayout: React.FC = (props) => {
             </Link>
           </Menu>
         </Grid.Column>
-        <Grid.Column width="12">{props.children}</Grid.Column>
+        <Grid.Column width="12">{children}</Grid.Column>
       </Grid>
     </Container>
   )

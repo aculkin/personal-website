@@ -1,12 +1,16 @@
-import * as React from 'react'
+import React, { ReactNode } from 'react'
 
 import { Navbar } from '../../components/Navbar'
 import { Footer } from '../../components/Footer'
 
-export const MainLayout: React.FC = (props) => {
+interface Props {
+  children: ReactNode
+}
+
+export const MainLayout: React.FC<Props> = ({ children }) => {
   return (
     <Navbar>
-      <div>{props.children}</div>
+      <div>{children}</div>
       <Footer />
     </Navbar>
   )

@@ -1,4 +1,4 @@
-import * as React from 'react'
+import React, { ReactNode } from 'react'
 import { createMedia } from '@artsy/fresnel'
 import { DesktopNav } from './DesktopNav'
 import { MobileNav } from './MobileNav'
@@ -11,7 +11,11 @@ export const { MediaContextProvider, Media } = createMedia({
   },
 })
 
-export const Navbar: React.FC = ({ children }) => (
+interface Props {
+  children: ReactNode
+}
+
+export const Navbar: React.FC<Props> = ({ children }) => (
   <MediaContextProvider>
     <DesktopNav>{children}</DesktopNav>
     <MobileNav>{children}</MobileNav>

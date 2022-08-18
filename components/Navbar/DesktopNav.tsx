@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { ReactNode } from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { Container, Menu } from 'semantic-ui-react'
@@ -7,7 +7,11 @@ import { Media } from './index'
 import { navigationItems } from './navigationItems'
 import { ContactMe } from '../ContactMe'
 
-export const DesktopNav: React.FC = (props) => {
+interface Props {
+  children: ReactNode
+}
+
+export const DesktopNav: React.FC<Props> = ({ children }) => {
   const { pathname } = useRouter()
   return (
     <Media greaterThan="mobile">
@@ -32,7 +36,7 @@ export const DesktopNav: React.FC = (props) => {
           </Menu.Item>
         </Container>
       </Menu>
-      {props.children}
+      {children}
     </Media>
   )
 }
