@@ -16,7 +16,7 @@ interface Props {
 }
 
 export const Navbar: React.FC<Props> = ({ children }) => (
-  <MediaContextProvider>
+  <MediaContextProvider disableDynamicMediaQueries>
     <DesktopNav>{children}</DesktopNav>
     <MobileNav>{children}</MobileNav>
   </MediaContextProvider>
