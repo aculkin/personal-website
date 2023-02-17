@@ -4,7 +4,7 @@ import { Card, Icon } from 'semantic-ui-react'
 export const HomePageCard = ({ page }) => {
   const { link, name, iconName, description } = page
   return (
-    <Link href={link}>
+    <Link href={link} legacyBehavior>
       <Card>
         <Card.Content>
           <Card.Header textAlign="center">
@@ -15,7 +15,7 @@ export const HomePageCard = ({ page }) => {
         </Card.Content>
       </Card>
     </Link>
-  )
+  );
 }
 
 export default HomePageCard

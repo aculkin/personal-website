@@ -10,7 +10,7 @@ export const EducationLayout: React.FC = ({ children }: { children: ReactNode })
       <Grid>
         <Grid.Column width="4">
           <Menu vertical fluid pointing>
-            <Link href="/education/lehigh">
+            <Link href="/education/lehigh" legacyBehavior>
               <Menu.Item
                 name="lehigh"
                 active={pathname === '/education/lehigh'}
@@ -19,7 +19,7 @@ export const EducationLayout: React.FC = ({ children }: { children: ReactNode })
                 <p>Check out Lehigh</p>
               </Menu.Item>
             </Link>
-            <Link href="/education/fullstack">
+            <Link href="/education/fullstack" legacyBehavior>
               <Menu.Item
                 name="fullstack"
                 active={pathname === '/education/fullstack'}
@@ -33,5 +33,5 @@ export const EducationLayout: React.FC = ({ children }: { children: ReactNode })
         <Grid.Column width="12">{children}</Grid.Column>
       </Grid>
     </Container>
-  )
+  );
 }

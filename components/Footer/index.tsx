@@ -23,27 +23,27 @@ export const Footer: React.FC = () => {
               <List link inverted>
                 <List.Item>
                   <Link href="/">
-                    <a>Home</a>
+                    Home
                   </Link>
                 </List.Item>
                 <List.Item>
                   <Link href="/projects">
-                    <a>Projects &#9999;&#65039;</a>
+                    Projects &#9999;&#65039;
                   </Link>
                 </List.Item>
                 <List.Item>
                   <Link href="/employment">
-                    <a>Employment &#127970;</a>
+                    Employment &#127970;
                   </Link>
                 </List.Item>
                 <List.Item>
                   <Link href="/skills">
-                    <a>Skills &#11088;</a>
+                    Skills &#11088;
                   </Link>
                 </List.Item>
                 <List.Item>
                   <Link href="/education">
-                    <a>Education &#128218;</a>
+                    Education &#128218;
                   </Link>
                 </List.Item>
               </List>
@@ -100,7 +100,7 @@ export const Footer: React.FC = () => {
         </Grid>
       </Container>
     </Segment>
-  )
+  );
 }
 
 export default Footer

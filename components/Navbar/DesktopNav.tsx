@@ -17,19 +17,19 @@ export const DesktopNav: React.FC<Props> = ({ children }) => {
     <Media greaterThan="mobile">
       <Menu fixed="top" inverted size="large">
         <Container>
-          <Link href={'/'}>
+          <Link href={'/'} legacyBehavior>
             <Menu.Item active={pathname === '/'} as="a">
               Andrew Culkin
             </Menu.Item>
           </Link>
           {navigationItems?.map(({ name, address }, index) => {
             return (
-              <Link key={name || index} href={address}>
+              <Link key={name || index} href={address} legacyBehavior>
                 <Menu.Item active={pathname.includes(address)} as="a">
                   {name}
                 </Menu.Item>
               </Link>
-            )
+            );
           })}
           <Menu.Item position="right">
             <ContactMe />
@@ -38,7 +38,7 @@ export const DesktopNav: React.FC<Props> = ({ children }) => {
       </Menu>
       {children}
     </Media>
-  )
+  );
 }
 
 export default DesktopNav

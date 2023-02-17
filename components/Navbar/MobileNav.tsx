@@ -28,19 +28,19 @@ export const MobileNav: React.FC<Props> = ({ children }) => {
             <Icon name="close" />
             Close
           </Menu.Item>
-          <Link href={'/'}>
+          <Link href={'/'} legacyBehavior>
             <Menu.Item active={pathname === '/'} as="a">
               Andrew Culkin
             </Menu.Item>
           </Link>
           {navigationItems?.map(({ name, address }, index) => {
             return (
-              <Link href={address} key={name || index}>
+              <Link href={address} key={name || index} legacyBehavior>
                 <Menu.Item active={pathname === address} as="a">
                   {name}
                 </Menu.Item>
               </Link>
-            )
+            );
           })}
         </Sidebar>
 
@@ -59,5 +59,5 @@ export const MobileNav: React.FC<Props> = ({ children }) => {
         </Sidebar.Pusher>
       </Sidebar.Pushable>
     </Media>
-  )
+  );
 }

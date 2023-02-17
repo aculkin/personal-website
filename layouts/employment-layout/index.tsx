@@ -10,7 +10,7 @@ export const EmploymentLayout: React.FC = ({ children }: { children: ReactNode }
       <Grid>
         <Grid.Column width="4">
           <Menu vertical fluid pointing>
-            <Link href="/employment/roof-rally">
+            <Link href="/employment/roof-rally" legacyBehavior>
               <Menu.Item
                 name="roof-rally"
                 active={pathname === '/employment/roof-rally'}
@@ -18,7 +18,7 @@ export const EmploymentLayout: React.FC = ({ children }: { children: ReactNode }
                 <Header as="h4">Roof Rally</Header>
               </Menu.Item>
             </Link>
-            <Link href="/employment/ernst-and-young">
+            <Link href="/employment/ernst-and-young" legacyBehavior>
               <Menu.Item
                 name="ernst-and-young"
                 active={pathname === '/employment/ernst-and-young'}
@@ -26,7 +26,7 @@ export const EmploymentLayout: React.FC = ({ children }: { children: ReactNode }
                 <Header as="h4">Ernst & Young</Header>
               </Menu.Item>
             </Link>
-            <Link href="/employment/eca-solar">
+            <Link href="/employment/eca-solar" legacyBehavior>
               <Menu.Item
                 name="eca-solar"
                 active={pathname === '/employment/eca-solar'}
@@ -39,5 +39,5 @@ export const EmploymentLayout: React.FC = ({ children }: { children: ReactNode }
         <Grid.Column width="12">{children}</Grid.Column>
       </Grid>
     </Container>
-  )
+  );
 }
