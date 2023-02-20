@@ -1,11 +1,11 @@
-import axios from 'axios'
-import { URLs } from './constants'
+import axios from "axios";
+import { URLs } from "./constants";
 
 export const languages = {
-  loadAll: async () => {
-    const { data } = await axios.get(URLs.languages)
-    return data
-  },
-}
+	loadAll: async () => {
+		const { data } = await axios.get(URLs.languages);
+		return data;
+	},
+};
 
-export default languages
+export default languages;

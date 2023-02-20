@@ -1,8 +1,8 @@
 interface Content {
-  content: string
-  id: number
+	content: string;
+	id: number;
 }
 
 export interface MainContentItems {
-  sectionItems: { [key: string]: Content }
+	sectionItems: { [key: string]: Content };
 }
