@@ -1,6 +1,5 @@
 import * as React from "react";
 import Head from "next/head";
-import Script from "next/script";
 import { GetStaticProps } from "next";
 import {
 	Header,
@@ -67,14 +66,6 @@ export const Home: React.FC<MainContentItems> = ({ sectionItems }) => {
 				<title>Andrew Culkin</title>
 				<meta name="description" content={metaPageDescription.content} />
 				<link rel="icon" href="/favicon.ico" />
-				<Script
-					type="text/javascript"
-					src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"
-				/>
-				<Script
-					type="text/javascript"
-					src="https://cdn.jsdelivr.net/npm/toastify-js"
-				/>
 			</Head>
 			<div style={pageStyle}>
 				<Container>
