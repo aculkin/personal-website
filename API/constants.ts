@@ -1,14 +1,18 @@
-export const sheetlyBaseUrl =
-	"https://api.sheety.co/b734fb632ca378b7dec1aa750c5c9a5d";
-export const spreadsheetName = "personalWebsiteData";
+const BASE_URL = `https://api.sheety.co/${process.env.SHEETY_ID}/${process.env.SHEETY_NAME}`;
 
 export const URLs = {
-	education: `${sheetlyBaseUrl}/${spreadsheetName}/education`,
-	employment: `${sheetlyBaseUrl}/${spreadsheetName}/employment`,
-	projects: `${sheetlyBaseUrl}/${spreadsheetName}/projects`,
-	frameworks: `${sheetlyBaseUrl}/${spreadsheetName}/frameworks`,
-	technologies: `${sheetlyBaseUrl}/${spreadsheetName}/technologies`,
-	languages: `${sheetlyBaseUrl}/${spreadsheetName}/languages`,
-	mainContent: `${sheetlyBaseUrl}/${spreadsheetName}/mainContent`,
+	education: `${BASE_URL}/education`,
+	employment: `${BASE_URL}/employment`,
+	projects: `${BASE_URL}/projects`,
+	frameworks: `${BASE_URL}/frameworks`,
+	technologies: `${BASE_URL}/technologies`,
+	languages: `${BASE_URL}/languages`,
+	mainContent: `${BASE_URL}/mainContent`,
 	contact: "/api/contact",
+};
+
+export const SHEETY_FETCH_CONFIG = {
+	headers: {
+		Authorization: `Basic ${process.env.SHEETY_AUTH_TOKEN}`,
+	},
 };
