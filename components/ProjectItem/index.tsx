@@ -19,16 +19,16 @@ export const ProjectItem: React.FC<ProjectInfoInterface> = ({ project }) => {
 		<Segment raised style={{ padding: "15px" }}>
 			<Grid stackable>
 				<Grid.Row>
-					<Grid.Column width='4'>
+					<Grid.Column width="4">
 						<Image
 							href={link}
-							target='_blank'
+							target="_blank"
 							fluid
 							src={awsKey ? getImageUrl(awsKey) : "/generic/project.png"}
 						/>
 					</Grid.Column>
-					<Grid.Column width='7'>
-						<Header as='h2'>
+					<Grid.Column width="7">
+						<Header as="h2">
 							{name}
 							<Header.Subheader>
 								{startDate} - {endDate}
@@ -36,10 +36,10 @@ export const ProjectItem: React.FC<ProjectInfoInterface> = ({ project }) => {
 						</Header>
 						<p>{description}</p>
 					</Grid.Column>
-					<Grid.Column width='5'>
+					<Grid.Column width="5">
 						{featureArray?.length > 0 && (
 							<>
-								<Header as='h3'>Features:</Header>
+								<Header as="h3">Features:</Header>
 								<List bulleted>
 									{featureArray?.map((feature, index) => {
 										return <List.Item key={index}>{feature}</List.Item>;
@@ -50,11 +50,11 @@ export const ProjectItem: React.FC<ProjectInfoInterface> = ({ project }) => {
 						<Button
 							basic
 							fluid
-							target='_blank'
+							target="_blank"
 							href={link}
 							content={linkName}
-							icon='external'
-							labelPosition='right'
+							icon="external"
+							labelPosition="right"
 							secondary
 						/>
 					</Grid.Column>

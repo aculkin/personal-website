@@ -9,12 +9,12 @@ export default class MyDocument extends Document {
 			<Html>
 				<Head>
 					<link
-						rel='stylesheet'
-						type='text/css'
-						href='https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css'
+						rel="stylesheet"
+						type="text/css"
+						href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"
 					/>
 					<style
-						type='text/css'
+						type="text/css"
 						dangerouslySetInnerHTML={{ __html: mediaStyles }}
 					/>
 				</Head>

@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Card, Icon } from "semantic-ui-react";
+import React from "react";
 
 export const HomePageCard = ({ page }) => {
 	const { link, name, iconName, description } = page;
@@ -7,7 +8,7 @@ export const HomePageCard = ({ page }) => {
 		<Link href={link} legacyBehavior>
 			<Card>
 				<Card.Content>
-					<Card.Header textAlign='center'>
+					<Card.Header textAlign="center">
 						<Icon name={iconName || null} />
 						{name}
 					</Card.Header>

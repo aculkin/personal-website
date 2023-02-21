@@ -31,12 +31,12 @@ export const EducationPage: React.FC<EducationPageInterface> = ({
 			<Head>
 				<title>Andrew Culkin | Education</title>
 				<meta
-					name='description'
+					name="description"
 					content="Schools I've graduated from and and educational programs and courses I've completed"
 				/>
 			</Head>
 			<div style={pageStyle}>
-				<Header style={headingStyle} textAlign='center' as='h1'>
+				<Header style={headingStyle} textAlign="center" as="h1">
 					Education
 				</Header>
 				<Container>

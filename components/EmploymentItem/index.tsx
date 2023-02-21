@@ -19,30 +19,30 @@ export const EmploymentItem: React.FC<EmploymentInfoInterface> = ({
 		<Segment>
 			<Grid>
 				<Grid.Row>
-					<Grid.Column width='4'>
+					<Grid.Column width="4">
 						<Image
 							href={companyWebsiteLink}
-							target='_blank'
+							target="_blank"
 							fluid
 							src={awsKey ? getImageUrl(awsKey) : "/generic/work.png"}
 						/>
 					</Grid.Column>
-					<Grid.Column width='12'>
-						<Header as='h2'>
+					<Grid.Column width="12">
+						<Header as="h2">
 							{companyName}
 							<Header.Subheader>
 								{startDate} - {endDate}
-								{internship && <Label color='green'>Internship</Label>}
+								{internship && <Label color="green">Internship</Label>}
 							</Header.Subheader>
 						</Header>
 						<p>{description}</p>
 						<Button
 							basic
-							target='_blank'
+							target="_blank"
 							href={companyWebsiteLink}
 							content={`${companyName} Website`}
-							icon='external'
-							labelPosition='right'
+							icon="external"
+							labelPosition="right"
 							secondary
 						/>
 					</Grid.Column>

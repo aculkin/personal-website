@@ -3,7 +3,7 @@ import Head from "next/head";
 import { GetStaticProps } from "next";
 import { Card, Divider, Header, Container } from "semantic-ui-react";
 
-import SkillItem from "../../components/SkillItem";
+import { SkillItem } from "../../components/SkillItem";
 import { SkillsInterface } from "../../interfaces/skills";
 import { API } from "../../API";
 import { MainLayout } from "../../layouts/main-layout";
@@ -46,13 +46,13 @@ export const SkillsPage: React.FC<SkillsInterface> = ({
 			<Head>
 				<title>Andrew Culkin | Skills</title>
 				<meta
-					name='description'
+					name="description"
 					content="All the Languages, Technologies and Development Frameworks I've worked with over my career."
 				/>
 			</Head>
 			<div style={pageStyle}>
 				<Container>
-					<Header style={headerStyle} textAlign='center' as='h1'>
+					<Header style={headerStyle} textAlign="center" as="h1">
 						Skills
 						<Header.Subheader style={subheaderStyle1}>
 							Frameworks, Technologies, and Languages I&apos;ve worked with
@@ -62,7 +62,7 @@ export const SkillsPage: React.FC<SkillsInterface> = ({
 				</Container>
 				<Container>
 					<Divider />
-					<Header style={subheaderStyle2} textAlign='center' as='h2'>
+					<Header style={subheaderStyle2} textAlign="center" as="h2">
 						Languages
 					</Header>
 					<Divider hidden />
@@ -71,12 +71,12 @@ export const SkillsPage: React.FC<SkillsInterface> = ({
 							<SkillItem
 								skill={skill}
 								key={skill?.name || index}
-								type='language'
+								type="language"
 							/>
 						))}
 					</Card.Group>
 					<Divider />
-					<Header style={subheaderStyle2} textAlign='center' as='h2'>
+					<Header style={subheaderStyle2} textAlign="center" as="h2">
 						Frameworks
 					</Header>
 					<Divider hidden />
@@ -85,12 +85,12 @@ export const SkillsPage: React.FC<SkillsInterface> = ({
 							<SkillItem
 								skill={skill}
 								key={skill?.name || index}
-								type='framework'
+								type="framework"
 							/>
 						))}
 					</Card.Group>
 					<Divider />
-					<Header style={subheaderStyle2} textAlign='center' as='h2'>
+					<Header style={subheaderStyle2} textAlign="center" as="h2">
 						Technologies
 					</Header>
 					<Divider hidden />
@@ -99,7 +99,7 @@ export const SkillsPage: React.FC<SkillsInterface> = ({
 							<SkillItem
 								skill={skill}
 								key={skill?.name || index}
-								type='technology'
+								type="technology"
 							/>
 						))}
 					</Card.Group>

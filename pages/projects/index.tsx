@@ -29,12 +29,12 @@ export const ProjectsPage: React.FC<ProjectArrayInterface> = ({ projects }) => {
 			<Head>
 				<title>Andrew Culkin | Projects</title>
 				<meta
-					name='description'
+					name="description"
 					content="Projects I'm currently working on, or have worked on over the course of my career."
 				/>
 			</Head>
 			<div style={pageStyle}>
-				<Header style={headingStyle} textAlign='center' as='h1'>
+				<Header style={headingStyle} textAlign="center" as="h1">
 					Projects
 				</Header>
 				<Container>

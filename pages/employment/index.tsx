@@ -31,12 +31,12 @@ export const EmploymentPage: React.FC<EmploymentArrayInterface> = ({
 			<Head>
 				<title>Andrew Culkin | Employment</title>
 				<meta
-					name='description'
+					name="description"
 					content="Companies I've worked for and startups I've founded"
 				/>
 			</Head>
 			<div style={pageStyle}>
-				<Header style={headingStyle} textAlign='center' as='h1'>
+				<Header style={headingStyle} textAlign="center" as="h1">
 					Employment
 				</Header>
 				<Container>

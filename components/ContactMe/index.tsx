@@ -45,7 +45,7 @@ export const ContactMe: React.FC = () => {
 		<Modal
 			closeIcon
 			trigger={
-				<Button onClick={() => setModalOpen(true)} as='a' primary>
+				<Button onClick={() => setModalOpen(true)} as="a" primary>
 					Contact Me
 				</Button>
 			}
@@ -70,10 +70,10 @@ export const ContactMe: React.FC = () => {
 				/>
 			</Modal.Content>
 			<Modal.Actions>
-				<Button floated='left' color='red' onClick={() => setModalOpen(false)}>
+				<Button floated="left" color="red" onClick={() => setModalOpen(false)}>
 					Cancel
 				</Button>
-				<Button loading={loading} color='green' onClick={sendEmail}>
+				<Button loading={loading} color="green" onClick={sendEmail}>
 					Send Message
 				</Button>
 			</Modal.Actions>

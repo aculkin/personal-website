@@ -36,20 +36,20 @@ export const SkillItem: React.FC<SkillInfoInterface> = ({ skill, type }) => {
 			<Popup
 				content={content}
 				header={header}
-				position='top center'
+				position="top center"
 				trigger={
-					<Card as='a' onClick={() => setModalOpen(true)}>
+					<Card as="a" onClick={() => setModalOpen(true)}>
 						<Image
 							src={awsKey ? getImageUrl(awsKey) : getGenericImage(type)}
 							wrapped
 							ui={false}
 						/>
 						<Card.Content>
-							<Card.Header textAlign='center'>{name}</Card.Header>
-							<Card.Meta textAlign='center'>{header}</Card.Meta>
-							<Card.Meta textAlign='center'>
+							<Card.Header textAlign="center">{name}</Card.Header>
+							<Card.Meta textAlign="center">{header}</Card.Meta>
+							<Card.Meta textAlign="center">
 								<Rating
-									icon='star'
+									icon="star"
 									defaultRating={proficiency}
 									maxRating={3}
 									disabled
@@ -69,7 +69,7 @@ export const SkillItem: React.FC<SkillInfoInterface> = ({ skill, type }) => {
 			>
 				<Header content={name} />
 				<Modal.Content image>
-					<Image size='medium' src={getImageUrl(awsKey)} wrapped bordered />
+					<Image size="medium" src={getImageUrl(awsKey)} wrapped bordered />
 					<Modal.Description>
 						<Header>{name}</Header>
 						<p>{description}</p>
@@ -77,12 +77,12 @@ export const SkillItem: React.FC<SkillInfoInterface> = ({ skill, type }) => {
 				</Modal.Content>
 				<Modal.Actions>
 					{link && (
-						<Button href={link} target='_blank'>
-							<Icon name='external' />
+						<Button href={link} target="_blank">
+							<Icon name="external" />
 							{name} Website
 						</Button>
 					)}
-					<Button color='red' onClick={() => setModalOpen(false)}>
+					<Button color="red" onClick={() => setModalOpen(false)}>
 						Close
 					</Button>
 				</Modal.Actions>

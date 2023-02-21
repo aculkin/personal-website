@@ -14,24 +14,24 @@ interface Props {
 export const DesktopNav: React.FC<Props> = ({ children }) => {
 	const { pathname } = useRouter();
 	return (
-		<Media greaterThan='mobile'>
-			<Menu fixed='top' inverted size='large'>
+		<Media greaterThan="mobile">
+			<Menu fixed="top" inverted size="large">
 				<Container>
 					<Link href={"/"} legacyBehavior>
-						<Menu.Item active={pathname === "/"} as='a'>
+						<Menu.Item active={pathname === "/"} as="a">
 							Andrew Culkin
 						</Menu.Item>
 					</Link>
 					{navigationItems?.map(({ name, address }, index) => {
 						return (
 							<Link key={name || index} href={address} legacyBehavior>
-								<Menu.Item active={pathname.includes(address)} as='a'>
+								<Menu.Item active={pathname.includes(address)} as="a">
 									{name}
 								</Menu.Item>
 							</Link>
 						);
 					})}
-					<Menu.Item position='right'>
+					<Menu.Item position="right">
 						<ContactMe />
 					</Menu.Item>
 				</Container>

@@ -15,7 +15,7 @@ import { MainContentItems } from "../interfaces/main";
 import { MainLayout } from "../layouts/main-layout";
 import { HomePageCard } from "../components/HomePageCard";
 import { pages } from "../utility";
-import API from "../API";
+import { API } from "../API";
 
 const pageStyle = {
 	backgroundImage: "url(/background-image.jpg)",
@@ -53,11 +53,11 @@ const subheaderStyle2 = {
 export const Home: React.FC<MainContentItems> = ({ sectionItems }) => {
 	const { heading, metaPageDescription, subHeading, message } = sectionItems;
 	const subHeadContent = subHeading.content;
-	let subHead1 = subHeadContent
+	const subHead1 = subHeadContent
 		.split(" ")
 		.slice(0, subHeadContent.split(" ").length / 2)
 		.join(" ");
-	let subHead2 = subHeadContent
+	const subHead2 = subHeadContent
 		.split(" ")
 		.slice(subHeadContent.split(" ").length / 2)
 		.join(" ");
@@ -65,15 +65,15 @@ export const Home: React.FC<MainContentItems> = ({ sectionItems }) => {
 		<MainLayout>
 			<Head>
 				<title>Andrew Culkin</title>
-				<meta name='description' content={metaPageDescription.content} />
-				<link rel='icon' href='/favicon.ico' />
+				<meta name="description" content={metaPageDescription.content} />
+				<link rel="icon" href="/favicon.ico" />
 				<Script
-					type='text/javascript'
-					src='https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js'
+					type="text/javascript"
+					src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"
 				/>
 				<Script
-					type='text/javascript'
-					src='https://cdn.jsdelivr.net/npm/toastify-js'
+					type="text/javascript"
+					src="https://cdn.jsdelivr.net/npm/toastify-js"
 				/>
 			</Head>
 			<div style={pageStyle}>
@@ -81,7 +81,7 @@ export const Home: React.FC<MainContentItems> = ({ sectionItems }) => {
 					<Grid>
 						<Grid.Row>
 							<Grid.Column>
-								<Header textAlign='center' as='h1' style={headerStyle}>
+								<Header textAlign="center" as="h1" style={headerStyle}>
 									{heading.content} &#128075;
 									<Header.Subheader style={subheaderStyle1}>
 										{subHead1}
@@ -90,7 +90,7 @@ export const Home: React.FC<MainContentItems> = ({ sectionItems }) => {
 										{subHead2}
 									</Header.Subheader>
 								</Header>
-								<Container textAlign='center'>
+								<Container textAlign="center">
 									<Message floating compact positive>
 										{message.content}
 									</Message>
@@ -119,7 +119,7 @@ export const Home: React.FC<MainContentItems> = ({ sectionItems }) => {
 export const getStaticProps: GetStaticProps = async () => {
 	const { mainContent } = await API.websiteData.mainContent();
 
-	let sectionItems = {};
+	const sectionItems = {};
 	mainContent.forEach(({ id, key, content }) => {
 		sectionItems[key] = { id, content };
 	});

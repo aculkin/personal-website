@@ -14,29 +14,29 @@ export const MobileNav: React.FC<Props> = ({ children }) => {
 	const [sidebarOpened, setSidebarOpened] = useState(false);
 	const { pathname } = useRouter();
 	return (
-		<Media at='mobile'>
+		<Media at="mobile">
 			<Sidebar.Pushable>
 				<Sidebar
 					as={Menu}
-					animation='overlay'
+					animation="overlay"
 					inverted
 					onHide={() => setSidebarOpened(false)}
 					vertical
 					visible={sidebarOpened}
 				>
-					<Menu.Item as='a' onClick={() => setSidebarOpened(false)}>
-						<Icon name='close' />
+					<Menu.Item as="a" onClick={() => setSidebarOpened(false)}>
+						<Icon name="close" />
 						Close
 					</Menu.Item>
 					<Link href={"/"} legacyBehavior>
-						<Menu.Item active={pathname === "/"} as='a'>
+						<Menu.Item active={pathname === "/"} as="a">
 							Andrew Culkin
 						</Menu.Item>
 					</Link>
 					{navigationItems?.map(({ name, address }, index) => {
 						return (
 							<Link href={address} key={name || index} legacyBehavior>
-								<Menu.Item active={pathname === address} as='a'>
+								<Menu.Item active={pathname === address} as="a">
 									{name}
 								</Menu.Item>
 							</Link>
@@ -45,12 +45,12 @@ export const MobileNav: React.FC<Props> = ({ children }) => {
 				</Sidebar>
 
 				<Sidebar.Pusher dimmed={sidebarOpened}>
-					<Menu fixed='top' inverted>
+					<Menu fixed="top" inverted>
 						<Menu.Item onClick={() => setSidebarOpened(!sidebarOpened)}>
-							<Icon name='sidebar' />
+							<Icon name="sidebar" />
 						</Menu.Item>
-						<Menu.Item position='right'>
-							<Button as='a' primary>
+						<Menu.Item position="right">
+							<Button as="a" primary>
 								Contact me!
 							</Button>
 						</Menu.Item>
