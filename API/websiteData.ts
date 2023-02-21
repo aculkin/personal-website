@@ -11,13 +11,22 @@ const getData = async (url: string) => {
 	}
 };
 
+const logError = (error: any) =>
+	error?.response?.status && error?.response?.statusText
+		? console.error(
+				"API Error:",
+				error?.response?.status,
+				error?.response?.statusText
+		  )
+		: console.error(error);
+
 export const websiteData = {
 	education: async () => {
 		try {
 			const { data } = await getData(URLs.education);
 			return data;
 		} catch (error) {
-			console.error(error);
+			logError(error);
 			return devData.data;
 		}
 	},
@@ -26,7 +35,7 @@ export const websiteData = {
 			const { data } = await getData(URLs.employment);
 			return data;
 		} catch (error) {
-			console.error(error);
+			logError(error);
 			return devData.data;
 		}
 	},
@@ -35,7 +44,7 @@ export const websiteData = {
 			const { data } = await getData(URLs.frameworks);
 			return data;
 		} catch (error) {
-			console.error(error);
+			logError(error);
 			return devData.data;
 		}
 	},
@@ -44,7 +53,7 @@ export const websiteData = {
 			const { data } = await getData(URLs.languages);
 			return data;
 		} catch (error) {
-			console.error(error);
+			logError(error);
 			return devData.data;
 		}
 	},
@@ -53,7 +62,7 @@ export const websiteData = {
 			const { data } = await getData(URLs.mainContent);
 			return data;
 		} catch (error) {
-			console.error(error);
+			logError(error);
 			return devData.data;
 		}
 	},
@@ -62,7 +71,7 @@ export const websiteData = {
 			const { data } = await getData(URLs.projects);
 			return data;
 		} catch (error) {
-			console.error(error);
+			logError(error);
 			return devData.data;
 		}
 	},
@@ -71,7 +80,7 @@ export const websiteData = {
 			const { data } = await getData(URLs.technologies);
 			return data;
 		} catch (error) {
-			console.error(error);
+			logError(error);
 			return devData.data;
 		}
 	},
