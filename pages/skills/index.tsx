@@ -112,9 +112,11 @@ export const SkillsPage: React.FC<SkillsInterface> = ({
 };
 
 export const getStaticProps: GetStaticProps = async () => {
-	const { languages } = await API.languages.loadAll();
-	const { technologies } = await API.technologies.loadAll();
-	const { frameworks } = await API.frameworks.loadAll();
+	const [{ languages }, { technologies }, { frameworks }] = await Promise.all([
+		API.websiteData.languages(),
+		API.websiteData.technologies(),
+		API.websiteData.frameworks(),
+	]);
 	return {
 		props: {
 			languages,

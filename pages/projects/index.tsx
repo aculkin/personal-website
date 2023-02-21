@@ -48,7 +48,7 @@ export const ProjectsPage: React.FC<ProjectArrayInterface> = ({ projects }) => {
 };
 
 export const getStaticProps: GetStaticProps = async () => {
-	const { projects } = await API.projects.loadAll();
+	const { projects } = await API.websiteData.projects();
 	return {
 		props: { projects },
 	};

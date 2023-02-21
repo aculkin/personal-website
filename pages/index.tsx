@@ -117,7 +117,7 @@ export const Home: React.FC<MainContentItems> = ({ sectionItems }) => {
 };
 
 export const getStaticProps: GetStaticProps = async () => {
-	const { mainContent } = await API.mainContent.loadAll();
+	const { mainContent } = await API.websiteData.mainContent();
 
 	let sectionItems = {};
 	mainContent.forEach(({ id, key, content }) => {

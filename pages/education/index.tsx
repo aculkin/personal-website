@@ -51,7 +51,7 @@ export const EducationPage: React.FC<EducationPageInterface> = ({
 };
 
 export const getStaticProps: GetStaticProps = async () => {
-	const { education } = await API.education.loadAll();
+	const { education } = await API.websiteData.education();
 	return {
 		props: { education },
 	};

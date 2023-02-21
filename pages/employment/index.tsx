@@ -53,7 +53,7 @@ export const EmploymentPage: React.FC<EmploymentArrayInterface> = ({
 };
 
 export const getStaticProps: GetStaticProps = async () => {
-	const { employment } = await API.employment.loadAll();
+	const { employment } = await API.websiteData.employment();
 	return {
 		props: { employment },
 	};
