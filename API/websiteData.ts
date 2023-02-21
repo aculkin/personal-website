@@ -1,35 +1,78 @@
 import axios from "axios";
 import { URLs, SHEETY_FETCH_CONFIG } from "./constants";
+import { devData } from "../utility";
 
-const getData = async (url: string) => axios.get(url, SHEETY_FETCH_CONFIG);
+const getData = async (url: string) => {
+	const shouldFetchSheetyData = !!process.env.SHEETY_AUTH_TOKEN;
+	if (shouldFetchSheetyData) {
+		return axios.get(url, SHEETY_FETCH_CONFIG);
+	} else {
+		return Promise.resolve(devData);
+	}
+};
 
 export const websiteData = {
 	education: async () => {
-		const { data } = await getData(URLs.education);
-		return data;
+		try {
+			const { data } = await getData(URLs.education);
+			return data;
+		} catch (error) {
+			console.error(error);
+			return devData.data;
+		}
 	},
 	employment: async () => {
-		const { data } = await getData(URLs.employment);
-		return data;
+		try {
+			const { data } = await getData(URLs.employment);
+			return data;
+		} catch (error) {
+			console.error(error);
+			return devData.data;
+		}
 	},
 	frameworks: async () => {
-		const { data } = await getData(URLs.frameworks);
-		return data;
+		try {
+			const { data } = await getData(URLs.frameworks);
+			return data;
+		} catch (error) {
+			console.error(error);
+			return devData.data;
+		}
 	},
 	languages: async () => {
-		const { data } = await getData(URLs.languages);
-		return data;
+		try {
+			const { data } = await getData(URLs.languages);
+			return data;
+		} catch (error) {
+			console.error(error);
+			return devData.data;
+		}
 	},
 	mainContent: async () => {
-		const { data } = await getData(URLs.mainContent);
-		return data;
+		try {
+			const { data } = await getData(URLs.mainContent);
+			return data;
+		} catch (error) {
+			console.error(error);
+			return devData.data;
+		}
 	},
 	projects: async () => {
-		const { data } = await getData(URLs.projects);
-		return data;
+		try {
+			const { data } = await getData(URLs.projects);
+			return data;
+		} catch (error) {
+			console.error(error);
+			return devData.data;
+		}
 	},
 	technologies: async () => {
-		const { data } = await getData(URLs.technologies);
-		return data;
+		try {
+			const { data } = await getData(URLs.technologies);
+			return data;
+		} catch (error) {
+			console.error(error);
+			return devData.data;
+		}
 	},
 };
