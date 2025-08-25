@@ -1,3 +1,4 @@
+import type { AxiosError } from "axios";
 import axios from "axios";
 import { URLs, SHEETY_FETCH_CONFIG } from "./constants";
 import { devData } from "../utility";
@@ -11,13 +12,13 @@ const getData = async (url: string) => {
 	}
 };
 
-const logError = (error: any) =>
+const logError = (error: AxiosError) =>
 	error?.response?.status && error?.response?.statusText
 		? console.error(
 				"API Error:",
 				error?.response?.status,
-				error?.response?.statusText
-		  )
+				error?.response?.statusText,
+			)
 		: console.error(error);
 
 export const websiteData = {

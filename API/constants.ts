@@ -11,8 +11,10 @@ export const URLs = {
 	contact: "/api/contact",
 };
 
+const AUTH_SCHEME = process.env.SHEETY_AUTH_SCHEME || "Bearer";
+
 export const SHEETY_FETCH_CONFIG = {
 	headers: {
-		Authorization: `Basic ${process.env.SHEETY_AUTH_TOKEN}`,
+		Authorization: `${AUTH_SCHEME} ${process.env.SHEETY_AUTH_TOKEN}`,
 	},
 };
