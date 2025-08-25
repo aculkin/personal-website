@@ -1,10 +1,8 @@
 import "semantic-ui-css/semantic.min.css";
 
 import React from "react";
-import { AppProps } from "next/app";
+import type { AppProps } from "next/app";
 
-export function App({ Component, pageProps }: AppProps): JSX.Element {
+export default function App({ Component, pageProps }: AppProps) {
 	return <Component {...pageProps} />;
 }
-
-export default App;

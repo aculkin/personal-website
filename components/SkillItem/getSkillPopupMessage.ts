@@ -1,7 +1,7 @@
 export const getSkillPopupMessage = (
 	proficiency: number,
 	typeSingluar: string,
-	name: string
+	name: string,
 ) => {
 	switch (proficiency) {
 		case 3:
