@@ -23,7 +23,7 @@ export const ContactMe: React.FC = () => {
 		});
 
 	const handleTextAreaChange = (
-		event: React.ChangeEvent<HTMLTextAreaElement>
+		event: React.ChangeEvent<HTMLTextAreaElement>,
 	): void =>
 		setContactMeFormData({ ...contactMeFormData, message: event.target.value });
 
@@ -34,7 +34,7 @@ export const ContactMe: React.FC = () => {
 			toast(`Your message to Andrew was sent succssfully!`, "positive");
 			setContactMeFormData(emptyFormData);
 			setModalOpen(false);
-		} catch (error) {
+		} catch {
 			toast("Oops, there was an issue sending your message", "negative");
 		} finally {
 			setLoading(false);
