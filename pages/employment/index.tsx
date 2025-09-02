@@ -2,6 +2,7 @@ import React from "react";
 import Head from "next/head";
 import { GetStaticProps } from "next";
 import { Header, Container } from "semantic-ui-react";
+import { motion } from "motion/react";
 
 import { API } from "../../API";
 import { MainLayout } from "../../layouts/main-layout";
@@ -41,10 +42,22 @@ export const EmploymentPage: React.FC<EmploymentArrayInterface> = ({
 				</Header>
 				<Container>
 					{employment?.map((company, index) => (
-						<EmploymentItem
+						<motion.div
+							style={{ paddingTop: "20px" }}
 							key={company?.companyName || index}
-							company={company}
-						/>
+							initial={{ opacity: 0, y: 12 }}
+							animate={{ opacity: 1, y: 0 }}
+							transition={{
+								duration: 0.35,
+								ease: "easeOut",
+								delay: index * 0.06,
+							}}
+						>
+							<EmploymentItem
+								key={company?.companyName || index}
+								company={company}
+							/>
+						</motion.div>
 					))}
 				</Container>
 			</div>

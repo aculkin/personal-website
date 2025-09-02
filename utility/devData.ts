@@ -82,12 +82,42 @@ const mainContent = [
 			"This is my personal website, click on the links below to see what I've been working on recently!",
 	},
 ];
-const education = [school, school, school, school];
-const employment = [company, company, company, company];
-const projects = [project, project, project, project];
-const languages = [language, language, language, language];
-const frameworks = [framework, framework, framework, framework];
-const technologies = [technology, technology, technology, technology];
+const education = [
+	{ ...school, id: 1, schoolName: `${school.schoolName} 1` },
+	{ ...school, id: 2, schoolName: `${school.schoolName} 2` },
+	{ ...school, id: 3, schoolName: `${school.schoolName} 3` },
+	{ ...school, id: 4, schoolName: `${school.schoolName} 4` },
+];
+const employment = [
+	{ ...company, id: 1, companyName: `${company.companyName} 1` },
+	{ ...company, id: 2, companyName: `${company.companyName} 2` },
+	{ ...company, id: 3, companyName: `${company.companyName} 3` },
+	{ ...company, id: 4, companyName: `${company.companyName} 4` },
+];
+const projects = [
+	{ ...project, id: 1, name: `${project.name} 1` },
+	{ ...project, id: 2, name: `${project.name} 2` },
+	{ ...project, id: 3, name: `${project.name} 3` },
+	{ ...project, id: 4, name: `${project.name} 4` },
+];
+const languages = [
+	{ ...language, id: 1, name: `${language.name} 1` },
+	{ ...language, id: 2, name: `${language.name} 2` },
+	{ ...language, id: 3, name: `${language.name} 3` },
+	{ ...language, id: 4, name: `${language.name} 4` },
+];
+const frameworks = [
+	{ ...framework, id: 1, name: `${framework.name} 1` },
+	{ ...framework, id: 2, name: `${framework.name} 2` },
+	{ ...framework, id: 3, name: `${framework.name} 3` },
+	{ ...framework, id: 4, name: `${framework.name} 4` },
+];
+const technologies = [
+	{ ...technology, id: 1, name: `${technology.name} 1` },
+	{ ...technology, id: 2, name: `${technology.name} 2` },
+	{ ...technology, id: 3, name: `${technology.name} 3` },
+	{ ...technology, id: 4, name: `${technology.name} 4` },
+];
 
 export default {
 	data: {

@@ -2,6 +2,7 @@ import * as React from "react";
 import Head from "next/head";
 import { GetStaticProps } from "next";
 import { Card, Divider, Header, Container } from "semantic-ui-react";
+import { motion } from "motion/react";
 
 import { SkillItem } from "../../components/SkillItem";
 import { SkillsInterface } from "../../interfaces/skills";
@@ -68,11 +69,18 @@ export const SkillsPage: React.FC<SkillsInterface> = ({
 					<Divider hidden />
 					<Card.Group stackable doubling centered itemsPerRow={5}>
 						{languages?.map((skill, index) => (
-							<SkillItem
-								skill={skill}
+							<motion.div
 								key={skill?.name || index}
-								type="language"
-							/>
+								initial={{ opacity: 0, y: 12 }}
+								animate={{ opacity: 1, y: 0 }}
+								transition={{
+									duration: 0.35,
+									ease: "easeOut",
+									delay: index * 0.06,
+								}}
+							>
+								<SkillItem skill={skill} type="language" />
+							</motion.div>
 						))}
 					</Card.Group>
 					<Divider />
@@ -82,11 +90,18 @@ export const SkillsPage: React.FC<SkillsInterface> = ({
 					<Divider hidden />
 					<Card.Group stackable doubling centered itemsPerRow={5}>
 						{frameworks?.map((skill, index) => (
-							<SkillItem
-								skill={skill}
+							<motion.div
 								key={skill?.name || index}
-								type="framework"
-							/>
+								initial={{ opacity: 0, y: 12 }}
+								animate={{ opacity: 1, y: 0 }}
+								transition={{
+									duration: 0.35,
+									ease: "easeOut",
+									delay: index * 0.06,
+								}}
+							>
+								<SkillItem skill={skill} type="framework" />
+							</motion.div>
 						))}
 					</Card.Group>
 					<Divider />
@@ -96,11 +111,18 @@ export const SkillsPage: React.FC<SkillsInterface> = ({
 					<Divider hidden />
 					<Card.Group stackable doubling centered itemsPerRow={5}>
 						{technologies?.map((skill, index) => (
-							<SkillItem
-								skill={skill}
+							<motion.div
 								key={skill?.name || index}
-								type="technology"
-							/>
+								initial={{ opacity: 0, y: 12 }}
+								animate={{ opacity: 1, y: 0 }}
+								transition={{
+									duration: 0.35,
+									ease: "easeOut",
+									delay: index * 0.06,
+								}}
+							>
+								<SkillItem skill={skill} type="technology" />
+							</motion.div>
 						))}
 					</Card.Group>
 					<Divider hidden />

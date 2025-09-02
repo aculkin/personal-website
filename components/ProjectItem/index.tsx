@@ -3,7 +3,10 @@ import { Button, Segment, Image, Header, Grid, List } from "semantic-ui-react";
 import { getImageUrl } from "../../utility";
 import { ProjectInfoInterface } from "../../interfaces/projects";
 
-export const ProjectItem: React.FC<ProjectInfoInterface> = ({ project }) => {
+export const ProjectItem = React.forwardRef<
+	HTMLDivElement,
+	ProjectInfoInterface
+>(({ project }, ref) => {
 	const {
 		name,
 		awsKey,
@@ -16,7 +19,7 @@ export const ProjectItem: React.FC<ProjectInfoInterface> = ({ project }) => {
 	} = project;
 	const featureArray = features?.split(";") || [];
 	return (
-		<Segment raised style={{ padding: "15px" }}>
+		<Segment raised style={{ padding: "15px" }} ref={ref}>
 			<Grid stackable>
 				<Grid.Row>
 					<Grid.Column width="4">
@@ -62,6 +65,8 @@ export const ProjectItem: React.FC<ProjectInfoInterface> = ({ project }) => {
 			</Grid>
 		</Segment>
 	);
-};
+});
+
+ProjectItem.displayName = "ProjectItem";
 
 export default ProjectItem;
