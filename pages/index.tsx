@@ -9,6 +9,9 @@ import {
 	Grid,
 	Message,
 } from "semantic-ui-react";
+import { motion } from "motion/react";
+
+const MotionHomePageCard = motion(HomePageCard);
 
 import { MainContentItems } from "../interfaces/main";
 import { MainLayout } from "../layouts/main-layout";
@@ -92,11 +95,19 @@ export const Home: React.FC<MainContentItems> = ({ sectionItems }) => {
 						<Grid.Row>
 							<Grid.Column>
 								<Card.Group centered>
-									{pages?.map((page, index) => {
-										return (
-											<HomePageCard key={page?.name || index} page={page} />
-										);
-									})}
+									{pages?.map((page, index) => (
+										<MotionHomePageCard
+											page={page}
+											key={page?.name || index}
+											initial={{ opacity: 0, y: 12 }}
+											animate={{ opacity: 1, y: 0 }}
+											transition={{
+												duration: 0.5,
+												ease: "easeInOut",
+												delay: index * 0.1,
+											}}
+										/>
+									))}
 								</Card.Group>
 							</Grid.Column>
 						</Grid.Row>

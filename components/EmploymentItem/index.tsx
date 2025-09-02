@@ -3,9 +3,10 @@ import { Button, Segment, Image, Header, Grid, Label } from "semantic-ui-react";
 import { getImageUrl } from "../../utility";
 import { EmploymentInfoInterface } from "../../interfaces/employment";
 
-export const EmploymentItem: React.FC<EmploymentInfoInterface> = ({
-	company,
-}) => {
+export const EmploymentItem = React.forwardRef<
+	HTMLDivElement,
+	EmploymentInfoInterface
+>(({ company }, ref) => {
 	const {
 		companyName,
 		internship,
@@ -16,7 +17,7 @@ export const EmploymentItem: React.FC<EmploymentInfoInterface> = ({
 		companyWebsiteLink,
 	} = company;
 	return (
-		<Segment>
+		<Segment ref={ref}>
 			<Grid>
 				<Grid.Row>
 					<Grid.Column width="4">
@@ -50,6 +51,8 @@ export const EmploymentItem: React.FC<EmploymentInfoInterface> = ({
 			</Grid>
 		</Segment>
 	);
-};
+});
+
+EmploymentItem.displayName = "EmploymentItem";
 
 export default EmploymentItem;

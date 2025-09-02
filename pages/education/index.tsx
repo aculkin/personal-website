@@ -2,6 +2,7 @@ import * as React from "react";
 import Head from "next/head";
 import { GetStaticProps } from "next";
 import { Header, Container, Divider } from "semantic-ui-react";
+import { motion } from "motion/react";
 
 import { API } from "../../API";
 import { MainLayout } from "../../layouts/main-layout";
@@ -23,6 +24,13 @@ const headingStyle = {
 	textShadow: "2px 2px 8px #000000",
 };
 
+export const pageTransition = (index: number) => {
+	return {
+		duration: 0.3,
+		delay: index * 0.2,
+	};
+};
+
 export const EducationPage: React.FC<EducationPageInterface> = ({
 	education,
 }) => {
@@ -41,7 +49,18 @@ export const EducationPage: React.FC<EducationPageInterface> = ({
 				</Header>
 				<Container>
 					{education?.map((school, index) => (
-						<EducationItem key={school?.schoolName || index} school={school} />
+						<motion.div
+							style={{ paddingTop: "20px" }}
+							key={school?.schoolName || index}
+							initial={{ opacity: 0, y: 12 }}
+							animate={{ opacity: 1, y: 0 }}
+							transition={pageTransition(index)}
+						>
+							<EducationItem
+								key={school?.schoolName || index}
+								school={school}
+							/>
+						</motion.div>
 					))}
 					<Divider hidden />
 				</Container>
