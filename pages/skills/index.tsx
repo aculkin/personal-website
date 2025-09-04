@@ -70,13 +70,18 @@ export const SkillsPage: React.FC<SkillsInterface> = ({
 					<Card.Group stackable doubling centered itemsPerRow={5}>
 						{languages?.map((skill, index) => (
 							<motion.div
+								style={{
+									paddingTop: "20px",
+									paddingRight: "10px",
+									paddingLeft: "10px",
+								}}
 								key={skill?.name || index}
 								initial={{ opacity: 0, y: 12 }}
 								animate={{ opacity: 1, y: 0 }}
 								transition={{
-									duration: 0.35,
+									duration: 0.4,
 									ease: "easeOut",
-									delay: index * 0.06,
+									delay: index * 0.2,
 								}}
 							>
 								<SkillItem skill={skill} type="language" />
@@ -91,13 +96,18 @@ export const SkillsPage: React.FC<SkillsInterface> = ({
 					<Card.Group stackable doubling centered itemsPerRow={5}>
 						{frameworks?.map((skill, index) => (
 							<motion.div
+								style={{
+									paddingTop: "20px",
+									paddingRight: "10px",
+									paddingLeft: "10px",
+								}}
 								key={skill?.name || index}
 								initial={{ opacity: 0, y: 12 }}
 								animate={{ opacity: 1, y: 0 }}
 								transition={{
-									duration: 0.35,
+									duration: 0.4,
 									ease: "easeOut",
-									delay: index * 0.06,
+									delay: index * 0.2,
 								}}
 							>
 								<SkillItem skill={skill} type="framework" />
@@ -112,13 +122,18 @@ export const SkillsPage: React.FC<SkillsInterface> = ({
 					<Card.Group stackable doubling centered itemsPerRow={5}>
 						{technologies?.map((skill, index) => (
 							<motion.div
+								style={{
+									paddingTop: "20px",
+									paddingRight: "10px",
+									paddingLeft: "10px",
+								}}
 								key={skill?.name || index}
 								initial={{ opacity: 0, y: 12 }}
 								animate={{ opacity: 1, y: 0 }}
 								transition={{
-									duration: 0.35,
+									duration: 0.4,
 									ease: "easeOut",
-									delay: index * 0.06,
+									delay: index * 0.2,
 								}}
 							>
 								<SkillItem skill={skill} type="technology" />

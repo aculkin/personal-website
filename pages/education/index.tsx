@@ -26,7 +26,7 @@ const headingStyle = {
 
 export const pageTransition = (index: number) => {
 	return {
-		duration: 0.3,
+		duration: 0.4,
 		delay: index * 0.2,
 	};
 };

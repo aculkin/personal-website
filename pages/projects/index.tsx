@@ -47,9 +47,9 @@ export const ProjectsPage: React.FC<ProjectArrayInterface> = ({ projects }) => {
 								initial={{ opacity: 0, y: 12 }}
 								animate={{ opacity: 1, y: 0 }}
 								transition={{
-									duration: 0.35,
+									duration: 0.4,
 									ease: "easeOut",
-									delay: index * 0.06,
+									delay: index * 0.2,
 								}}
 							>
 								<ProjectItem project={project} />
