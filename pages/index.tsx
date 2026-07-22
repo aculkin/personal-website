@@ -19,15 +19,13 @@ import { API } from "../API";
 
 const pageStyle = {
 	backgroundImage: "url(/background-image.jpg)",
-	backgroundSize: "cover",
 	minHeight: "100vh",
-	backgroundAttachment: "fixed",
 	paddingBottom: "3em",
 };
 
 const headerStyle = {
-	marginTop: "2em",
-	fontSize: "3em",
+	marginTop: "1em",
+	fontSize: "clamp(2.2rem, 8vw, 3em)",
 	fontWeight: "bold",
 	color: "white",
 	textShadow: "2px 2px 8px #000000",
@@ -68,7 +66,7 @@ export const Home: React.FC<MainContentItems> = ({ sectionItems }) => {
 				<meta name="description" content={metaPageDescription.content} />
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
-			<div style={pageStyle}>
+			<div className="page-bg" style={pageStyle}>
 				<Container>
 					<Grid>
 						<Grid.Row>

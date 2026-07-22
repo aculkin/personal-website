@@ -1,0 +1,86 @@
+/* Global styles layered on top of Semantic UI for a polished, mobile-first feel. */
+
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	text-rendering: optimizeLegibility;
+	overflow-x: hidden;
+}
+
+/* Never let an element push the page wider than the viewport on mobile. */
+img,
+video {
+	max-width: 100%;
+	height: auto;
+}
+
+/* Shared full-bleed background wrapper used by every page.
+   `background-image` is still set inline per-page; sizing/positioning lives here
+   so it can respond to viewport size. */
+.page-bg {
+	background-size: cover;
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	/* Clear the fixed top navbar so content isn't hidden underneath it. */
+	padding-top: 4.5rem;
+}
+
+/* `background-attachment: fixed` is janky (and often broken) on mobile Safari,
+   causing awkward zoom/scaling of the image. Fall back to a normal scroll bg. */
+@media (max-width: 767px) {
+	.page-bg {
+		background-attachment: scroll;
+		padding-top: 4rem;
+	}
+
+	/* Tighten the generous desktop gutters so cards use the small screen well. */
+	.ui.container {
+		margin-left: 1rem !important;
+		margin-right: 1rem !important;
+		width: auto !important;
+	}
+
+	/* Give stacked segments/cards a bit more breathing room. */
+	.ui.segment {
+		padding: 1.1em !important;
+	}
+}
+
+/* Subtle lift on the home page navigation cards for a more premium feel. */
+.ui.cards > .card,
+.ui.card {
+	transition:
+		transform 0.18s ease,
+		box-shadow 0.18s ease;
+}
+
+.ui.cards > .card:hover,
+.ui.card:hover {
+	transform: translateY(-4px);
+	box-shadow: 0 10px 26px rgba(0, 0, 0, 0.28) !important;
+}
+
+/* Let the footer's social buttons wrap gracefully instead of overflowing. */
+.footer-social {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.6rem;
+	align-items: center;
+}
+
+/* Respect users who prefer reduced motion. */
+@media (prefers-reduced-motion: reduce) {
+	html {
+		scroll-behavior: auto;
+	}
+
+	.ui.cards > .card,
+	.ui.card {
+		transition: none;
+	}
+}

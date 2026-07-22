@@ -17,8 +17,8 @@ export const EmploymentItem = React.forwardRef<
 		companyWebsiteLink,
 	} = company;
 	return (
-		<Segment ref={ref}>
-			<Grid>
+		<Segment raised style={{ padding: "15px" }} ref={ref}>
+			<Grid stackable verticalAlign="middle">
 				<Grid.Row>
 					<Grid.Column width="4">
 						<Image

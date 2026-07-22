@@ -1,10 +1,11 @@
 import React, { useState, ReactNode } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { Sidebar, Menu, Button, Icon } from "semantic-ui-react";
+import { Sidebar, Menu, Icon } from "semantic-ui-react";
 
 import { Media } from "./index";
 import { navigationItems } from "./navigationItems";
+import { ContactMe } from "../ContactMe";
 
 interface Props {
 	children: ReactNode;
@@ -42,6 +43,9 @@ export const MobileNav: React.FC<Props> = ({ children }) => {
 							</Link>
 						);
 					})}
+					<Menu.Item onClick={() => setSidebarOpened(false)}>
+						<ContactMe />
+					</Menu.Item>
 				</Sidebar>
 
 				<Sidebar.Pusher dimmed={sidebarOpened}>
@@ -49,10 +53,13 @@ export const MobileNav: React.FC<Props> = ({ children }) => {
 						<Menu.Item onClick={() => setSidebarOpened(!sidebarOpened)}>
 							<Icon name="sidebar" />
 						</Menu.Item>
+						<Link href={"/"} legacyBehavior>
+							<Menu.Item as="a" header active={pathname === "/"}>
+								Andrew Culkin
+							</Menu.Item>
+						</Link>
 						<Menu.Item position="right">
-							<Button as="a" primary>
-								Contact me!
-							</Button>
+							<ContactMe />
 						</Menu.Item>
 					</Menu>
 					{children}

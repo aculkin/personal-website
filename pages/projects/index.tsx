@@ -11,14 +11,12 @@ import { ProjectArrayInterface } from "../../interfaces/projects";
 
 const pageStyle = {
 	backgroundImage: "url(/projects-background.jpg)",
-	backgroundSize: "cover",
-	backgroundAttachment: "fixed",
 	paddingBottom: "50px",
 };
 
 const headingStyle = {
-	paddingTop: "2em",
-	fontSize: "3em",
+	paddingTop: "1em",
+	fontSize: "clamp(2.2rem, 8vw, 3em)",
 	fontWeight: "bold",
 	color: "white",
 	textShadow: "2px 2px 8px #000000",
@@ -34,7 +32,7 @@ export const ProjectsPage: React.FC<ProjectArrayInterface> = ({ projects }) => {
 					content="Projects I'm currently working on, or have worked on over the course of my career."
 				/>
 			</Head>
-			<div style={pageStyle}>
+			<div className="page-bg" style={pageStyle}>
 				<Header style={headingStyle} textAlign="center" as="h1">
 					Projects
 				</Header>

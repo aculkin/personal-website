@@ -39,49 +39,56 @@ export const Footer: FC = () => {
 							</List>
 						</Grid.Column>
 						<Grid.Column width={10}>
-							<Button
-								href="https://github.com/aculkin/"
-								target="_blank"
-								circular
-								color="grey"
-								icon="github square"
-							/>
-							<Button
-								href="https://www.linkedin.com/in/andrew-culkin/"
-								target="_blank"
-								circular
-								color="linkedin"
-								icon="linkedin"
-							/>
-							<Button
-								href="https://www.instagram.com/aculkin/"
-								target="_blank"
-								circular
-								color="instagram"
-								icon="instagram"
-							/>
-							<Button
-								href="https://www.facebook.com/andrew.culkin/"
-								target="_blank"
-								circular
-								color="facebook"
-								icon="facebook"
-							/>
-							<Button
-								href="https://twitter.com/AndrewSCulkin/"
-								target="_blank"
-								circular
-								color="twitter"
-								icon="twitter square"
-							/>
+							<div className="footer-social">
+								<Button
+									href="https://github.com/aculkin/"
+									target="_blank"
+									circular
+									color="grey"
+									icon="github square"
+									aria-label="GitHub"
+								/>
+								<Button
+									href="https://www.linkedin.com/in/andrew-culkin/"
+									target="_blank"
+									circular
+									color="linkedin"
+									icon="linkedin"
+									aria-label="LinkedIn"
+								/>
+								<Button
+									href="https://www.instagram.com/aculkin/"
+									target="_blank"
+									circular
+									color="instagram"
+									icon="instagram"
+									aria-label="Instagram"
+								/>
+								<Button
+									href="https://www.facebook.com/andrew.culkin/"
+									target="_blank"
+									circular
+									color="facebook"
+									icon="facebook"
+									aria-label="Facebook"
+								/>
+								<Button
+									href="https://twitter.com/AndrewSCulkin/"
+									target="_blank"
+									circular
+									color="twitter"
+									icon="twitter square"
+									aria-label="Twitter"
+								/>
+							</div>
+							<Divider hidden />
 							<Button
 								href="https://culkin-website-images.s3.us-west-2.amazonaws.com/other-assets/resume"
-								floated="right"
 								download
 								target="_blank"
 							>
 								<Icon name="download" />
-								Andrew&apos;s Resume - <i>(Updated: November 2021)</i>
+								Andrew&apos;s Resume
 							</Button>
 							<Divider />
 							<p>&copy; {new Date().getFullYear()} - Andrew Culkin</p>

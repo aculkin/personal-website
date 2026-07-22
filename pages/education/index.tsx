@@ -11,14 +11,12 @@ import { EducationPageInterface } from "../../interfaces/education";
 
 const pageStyle = {
 	backgroundImage: "url(/education-background.jpg)",
-	backgroundSize: "cover",
-	backgroundAttachment: "fixed",
 	paddingBottom: "50px",
 };
 
 const headingStyle = {
-	paddingTop: "2em",
-	fontSize: "3em",
+	paddingTop: "1em",
+	fontSize: "clamp(2.2rem, 8vw, 3em)",
 	fontWeight: "bold",
 	color: "white",
 	textShadow: "2px 2px 8px #000000",
@@ -43,7 +41,7 @@ export const EducationPage: React.FC<EducationPageInterface> = ({
 					content="Schools I've graduated from and and educational programs and courses I've completed"
 				/>
 			</Head>
-			<div style={pageStyle}>
+			<div className="page-bg" style={pageStyle}>
 				<Header style={headingStyle} textAlign="center" as="h1">
 					Education
 				</Header>

@@ -11,14 +11,12 @@ import { EmploymentArrayInterface } from "../../interfaces/employment";
 
 const pageStyle = {
 	backgroundImage: "url(/employment-background.jpg)",
-	backgroundSize: "cover",
-	backgroundAttachment: "fixed",
 	paddingBottom: "50px",
 };
 
 const headingStyle = {
-	paddingTop: "2em",
-	fontSize: "3em",
+	paddingTop: "1em",
+	fontSize: "clamp(2.2rem, 8vw, 3em)",
 	fontWeight: "bold",
 	color: "white",
 	textShadow: "2px 2px 8px #000000",
@@ -36,7 +34,7 @@ export const EmploymentPage: React.FC<EmploymentArrayInterface> = ({
 					content="Companies I've worked for and startups I've founded"
 				/>
 			</Head>
-			<div style={pageStyle}>
+			<div className="page-bg" style={pageStyle}>
 				<Header style={headingStyle} textAlign="center" as="h1">
 					Employment
 				</Header>

@@ -11,14 +11,12 @@ import { MainLayout } from "../../layouts/main-layout";
 
 const pageStyle = {
 	backgroundImage: "url(/skills-background.jpg)",
-	backgroundSize: "cover",
-	backgroundAttachment: "fixed",
 	paddingBottom: "50px",
 };
 
 const headerStyle = {
-	paddingTop: "2em",
-	fontSize: "3em",
+	paddingTop: "1em",
+	fontSize: "clamp(2.2rem, 8vw, 3em)",
 	fontWeight: "bold",
 	color: "white",
 	textShadow: "2px 2px 8px #000000",
@@ -51,7 +49,7 @@ export const SkillsPage: React.FC<SkillsInterface> = ({
 					content="All the Languages, Technologies and Development Frameworks I've worked with over my career."
 				/>
 			</Head>
-			<div style={pageStyle}>
+			<div className="page-bg" style={pageStyle}>
 				<Container>
 					<Header style={headerStyle} textAlign="center" as="h1">
 						Skills
